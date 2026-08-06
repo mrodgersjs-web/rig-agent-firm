@@ -1,0 +1,124 @@
+name: Agent Firm Heartbeat
+
+on:
+  schedule:
+    - cron: '0 * * * *'
+  workflow_dispatch:
+    inputs:
+      repos:
+        description: 'Comma-separated repo list (empty = fleet default)'
+        required: false
+        default: ''
+
+permissions:
+  contents: write
+
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        repo:
+          - proof-studio
+          - jake-studio
+          - mesh-studio
+          - rigforge
+          - fde-portfolio
+          - doctrine
+    steps:
+      - name: Checkout agent-firm
+        uses: actions/checkout@v4
+        with:
+          path: agent-firm
+
+      - name: Checkout ${{ matrix.repo }}
+        uses: actions/checkout@v4
+        with:
+          repository: mrodgersjs-web/${{ matrix.repo }}
+          path: agent-firm/target-repo
+
+      - name: Check invariant
+        id: invariant
+        working-directory: agent-firm
+        shell: bash
+        run: |
+          set -euo pipefail
+          if [[ -x "target-repo/scripts/smoke.sh" ]]; then
+            echo "status=online" >> "$GITHUB_OUTPUT"
+            echo "message=smoke.sh is present and executable" >> "$GITHUB_OUTPUT"
+          else
+            echo "status=offline" >> "$GITHUB_OUTPUT"
+            echo "message=smoke.sh is missing or not executable" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Write status JSON
+        working-directory: agent-firm
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p status
+          cat > "status/${{ matrix.repo }}.json" <<EOF
+          {
+            "schema_version": 1,
+            "repo": "${{ matrix.repo }}",
+            "owner": "mrodgersjs-web",
+            "agent": "${{ matrix.repo }}",
+            "status": "${{ steps.invariant.outputs.status }}",
+            "invariant": "scripts/smoke.sh exists and is executable",
+            "invariant_result": "${{ steps.invariant.outputs.message }}",
+            "checked_at": "$(date -u +%Y-%m-%dT%H:%M:%SZ)",
+            "run_id": "${{ github.run_id }}",
+            "run_url": "${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}"
+          }
+          EOF
+
+      - name: Upload status artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: status-${{ matrix.repo }}
+          path: agent-firm/status/${{ matrix.repo }}.json
+          if-no-files-found: error
+          retention-days: 1
+
+  dashboard:
+    runs-on: ubuntu-latest
+    needs: probe
+    steps:
+      - name: Checkout agent-firm
+        uses: actions/checkout@v4
+        with:
+          path: agent-firm
+
+      - name: Download all status artifacts
+        uses: actions/download-artifact@v4
+        with:
+          path: agent-firm/status
+          pattern: status-*
+          merge-multiple: true
+
+      - name: Generate dashboard badge
+        working-directory: agent-firm
+        shell: bash
+        run: |
+          set -euo pipefail
+          chmod +x scripts/generate-dashboard.sh
+          ./scripts/generate-dashboard.sh status badge.json
+
+      - name: Commit status to heartbeat branch
+        working-directory: agent-firm
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name "agent-firm[bot]"
+          git config user.email "agent-firm@users.noreply.github.com"
+          git fetch origin heartbeat || true
+          if git rev-parse --verify origin/heartbeat >/dev/null 2>&1; then
+            git checkout heartbeat
+          else
+            git checkout -b heartbeat
+          fi
+          mkdir -p status
+          git add status/*.json badge.json
+          git commit -m "heartbeat: update fleet status [skip ci]" || true
+          git push origin heartbeat

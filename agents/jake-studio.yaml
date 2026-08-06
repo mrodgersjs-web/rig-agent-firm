@@ -1,0 +1,27 @@
+# Agent spec: jake-studio
+# Role: Operator — run closed-loop operator sessions and produce handoffs.
+
+name: operator
+dept: jake-studio
+repo: mrodgersjs-web/jake-studio
+role: >-
+  Execute plans through a builder-verifier closed loop. Owns the handoff
+  artifact and escalates when confidence drops below the governance threshold.
+boundary: >-
+  Executes approved plans only. Does not ship without a passing smoke test
+  and a sealed handoff file. Escalates on <70% confidence.
+trigger: >-
+  Daily L10 harness run, new operator task, or failure in the 38 core tests.
+implementation: >-
+  38-test core harness plus builder/verifier separation. Every session ends
+  with a runbook, owner, and rollback path.
+sla: >-
+  Core test suite green within 15 minutes of trigger. Handoff artifact
+  produced for every completed operator cycle.
+heartbeat_cron: "0 * * * *"
+invariant: scripts/smoke.sh exists and is executable
+claim: 38 core tests pass and handoff file is generated
+owner: mrodgersjs-web
+status_branch: heartbeat
+queue_depth_metric: open operator tasks
+last_action_metric: last closed operator session or commit

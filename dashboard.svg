@@ -1,0 +1,115 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="800" viewBox="0 0 1200 800">
+  <defs>
+    <style>
+      .bg { fill: #0d1117; }
+      .grid { stroke: #21262d; stroke-width: 1; }
+      .card { fill: #161b22; stroke: #30363d; stroke-width: 1; }
+      .title { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; font-size: 28px; font-weight: 700; fill: #f0f6fc; }
+      .subtitle { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; font-size: 14px; fill: #8b949e; }
+      .repo { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; font-size: 16px; font-weight: 600; fill: #f0f6fc; }
+      .role { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; font-size: 12px; fill: #58a6ff; }
+      .label { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; font-size: 12px; fill: #8b949e; }
+      .value { font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace; font-size: 13px; fill: #c9d1d9; }
+      .online { fill: #238636; }
+      .offline { fill: #da3633; }
+      .muted { fill: #8b949e; }
+    </style>
+  </defs>
+
+  <rect class="bg" width="1200" height="800"/>
+
+  <!-- Grid lines -->
+  <line class="grid" x1="60" y1="100" x2="1140" y2="100"/>
+  <line class="grid" x1="60" y1="760" x2="1140" y2="760"/>
+  <line class="grid" x1="60" y1="100" x2="60" y2="760"/>
+  <line class="grid" x1="1140" y1="100" x2="1140" y2="760"/>
+
+  <!-- Header -->
+  <text class="title" x="60" y="60">AGENT FIRM</text>
+  <text class="subtitle" x="240" y="60">mrodgersjs-web · hourly heartbeat · mission control</text>
+  <text class="subtitle" x="60" y="85">Last fleet refresh: {{fleet.last_checked_at}}</text>
+
+  <!-- Card 1: proof-studio / Verifier -->
+  <g transform="translate(60, 120)">
+    <rect class="card" width="340" height="280" rx="8"/>
+    <rect class="online" width="8" height="280" rx="4" x="0" y="0"/>
+    <text class="repo" x="24" y="34">proof-studio</text>
+    <text class="role" x="24" y="54">VERIFIER</text>
+    <text class="label" x="24" y="100">heartbeat</text>
+    <text class="value" x="24" y="120">{{proof-studio.status}}</text>
+    <text class="label" x="24" y="170">queue depth</text>
+    <text class="value" x="24" y="190">{{proof-studio.queue_depth}}</text>
+    <text class="label" x="24" y="240">last action</text>
+    <text class="value" x="24" y="260">{{proof-studio.last_action}}</text>
+  </g>
+
+  <!-- Card 2: jake-studio / Operator -->
+  <g transform="translate(430, 120)">
+    <rect class="card" width="340" height="280" rx="8"/>
+    <rect class="online" width="8" height="280" rx="4" x="0" y="0"/>
+    <text class="repo" x="24" y="34">jake-studio</text>
+    <text class="role" x="24" y="54">OPERATOR</text>
+    <text class="label" x="24" y="100">heartbeat</text>
+    <text class="value" x="24" y="120">{{jake-studio.status}}</text>
+    <text class="label" x="24" y="170">queue depth</text>
+    <text class="value" x="24" y="190">{{jake-studio.queue_depth}}</text>
+    <text class="label" x="24" y="240">last action</text>
+    <text class="value" x="24" y="260">{{jake-studio.last_action}}</text>
+  </g>
+
+  <!-- Card 3: mesh-studio / Fleet -->
+  <g transform="translate(800, 120)">
+    <rect class="card" width="340" height="280" rx="8"/>
+    <rect class="online" width="8" height="280" rx="4" x="0" y="0"/>
+    <text class="repo" x="24" y="34">mesh-studio</text>
+    <text class="role" x="24" y="54">FLEET</text>
+    <text class="label" x="24" y="100">heartbeat</text>
+    <text class="value" x="24" y="120">{{mesh-studio.status}}</text>
+    <text class="label" x="24" y="170">queue depth</text>
+    <text class="value" x="24" y="190">{{mesh-studio.queue_depth}}</text>
+    <text class="label" x="24" y="240">last action</text>
+    <text class="value" x="24" y="260">{{mesh-studio.last_action}}</text>
+  </g>
+
+  <!-- Card 4: rigforge / Builder -->
+  <g transform="translate(60, 440)">
+    <rect class="card" width="340" height="280" rx="8"/>
+    <rect class="online" width="8" height="280" rx="4" x="0" y="0"/>
+    <text class="repo" x="24" y="34">rigforge</text>
+    <text class="role" x="24" y="54">BUILDER</text>
+    <text class="label" x="24" y="100">heartbeat</text>
+    <text class="value" x="24" y="120">{{rigforge.status}}</text>
+    <text class="label" x="24" y="170">queue depth</text>
+    <text class="value" x="24" y="190">{{rigforge.queue_depth}}</text>
+    <text class="label" x="24" y="240">last action</text>
+    <text class="value" x="24" y="260">{{rigforge.last_action}}</text>
+  </g>
+
+  <!-- Card 5: fde-portfolio / Strategist -->
+  <g transform="translate(430, 440)">
+    <rect class="card" width="340" height="280" rx="8"/>
+    <rect class="online" width="8" height="280" rx="4" x="0" y="0"/>
+    <text class="repo" x="24" y="34">fde-portfolio</text>
+    <text class="role" x="24" y="54">STRATEGIST</text>
+    <text class="label" x="24" y="100">heartbeat</text>
+    <text class="value" x="24" y="120">{{fde-portfolio.status}}</text>
+    <text class="label" x="24" y="170">queue depth</text>
+    <text class="value" x="24" y="190">{{fde-portfolio.queue_depth}}</text>
+    <text class="label" x="24" y="240">last action</text>
+    <text class="value" x="24" y="260">{{fde-portfolio.last_action}}</text>
+  </g>
+
+  <!-- Card 6: doctrine / Governor -->
+  <g transform="translate(800, 440)">
+    <rect class="card" width="340" height="280" rx="8"/>
+    <rect class="online" width="8" height="280" rx="4" x="0" y="0"/>
+    <text class="repo" x="24" y="34">doctrine</text>
+    <text class="role" x="24" y="54">GOVERNOR</text>
+    <text class="label" x="24" y="100">heartbeat</text>
+    <text class="value" x="24" y="120">{{doctrine.status}}</text>
+    <text class="label" x="24" y="170">queue depth</text>
+    <text class="value" x="24" y="190">{{doctrine.queue_depth}}</text>
+    <text class="label" x="24" y="240">last action</text>
+    <text class="value" x="24" y="260">{{doctrine.last_action}}</text>
+  </g>
+</svg>

@@ -1,0 +1,28 @@
+# Agent spec: mesh-studio
+# Role: Fleet — probe, boot, and recover fleet nodes.
+
+name: fleet
+dept: mesh-studio
+repo: mrodgersjs-web/mesh-studio
+role: >-
+  Keep the compute fleet healthy. Probe nodes, boot cold nodes, recover
+  failed ones, and report status to the operator dashboard.
+boundary: >-
+  Infrastructure health only. No autonomous code changes; recovery actions
+  beyond restart require operator approval.
+trigger: >-
+  Node heartbeat timeout, `rig-mesh smoke` invocation, or scheduled
+  hourly probe window.
+implementation: >-
+  Fleet probe / boot / recover loop with a node status ledger and
+  deterministic recovery runbooks per node class.
+sla: >-
+  P99 node recovery < 5 minutes. Probe latency < 1 second for live nodes.
+  Alerts emitted within 60 seconds of failure detection.
+heartbeat_cron: "0 * * * *"
+invariant: scripts/smoke.sh exists and is executable
+claim: rig-mesh smoke returns healthy for all registered nodes
+owner: mrodgersjs-web
+status_branch: heartbeat
+queue_depth_metric: nodes in recovery or alert state
+last_action_metric: last probe run or recovery action

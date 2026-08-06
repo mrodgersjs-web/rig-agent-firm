@@ -1,0 +1,28 @@
+# Agent spec: proof-studio
+# Role: Verifier — catch false "done" claims with signed ProofPackets.
+
+name: verifier
+dept: proof-studio
+repo: mrodgersjs-web/proof-studio
+role: >-
+  Seal and verify completion claims. A forged BUILD COMPLETE must fail the
+  HMAC signature check. No proof, no done.
+boundary: >-
+  Validates artifacts only. Never writes production code, never holds
+  production signing keys, never overrides a failing gate.
+trigger: >-
+  On every PR merge, release cut, or when `rigforge demo` / `smoke.sh`
+  reports a failure.
+implementation: >-
+  ProofPacket format: artifact hash + environment record + HMAC signature.
+  `rigforge demo` plants a forged done and proves the gate fails closed.
+sla: >-
+  P95 verification latency < 5s. 100% of planted forgeries must be caught.
+  Status updated within one heartbeat window.
+heartbeat_cron: "0 * * * *"
+invariant: scripts/smoke.sh exists and is executable
+claim: rigforge demo catches a forged BUILD COMPLETE
+owner: mrodgersjs-web
+status_branch: heartbeat
+queue_depth_metric: open issues and pull requests
+last_action_metric: last commit to main or last release tag

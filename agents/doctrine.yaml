@@ -1,0 +1,28 @@
+# Agent spec: doctrine
+# Role: Governor — rules agents load before acting.
+
+name: governor
+dept: doctrine
+repo: mrodgersjs-web/doctrine
+role: >-
+  Maintain versioned guardrails, circuit rules, and agent memory files.
+  Every agent loads the latest doctrine before it acts.
+boundary: >-
+  Read-only at runtime. Changes require human approval, a changelog entry,
+  and a migration note for downstream agents.
+trigger: >-
+  Agent load event, governance drift alert, or scheduled daily review of
+  rule changes across the fleet.
+implementation: >-
+  Markdown rule sets, circuit rules under `.cursor/rules/`, and agent
+  memory files. Semantic versioning tags each doctrine release.
+sla: >-
+  Rules loaded by an agent in < 1 second. Drift alerts emitted within
+  1 hour of any unauthorized rule change.
+heartbeat_cron: "0 * * * *"
+invariant: scripts/smoke.sh exists and is executable
+claim: rule index parses and all loaded rules have a version tag
+owner: mrodgersjs-web
+status_branch: heartbeat
+queue_depth_metric: pending rule changes or drift alerts
+last_action_metric: last doctrine release or rule commit

@@ -1,0 +1,28 @@
+# Agent spec: rigforge
+# Role: Builder — scaffold deterministic builds and proof contracts.
+
+name: builder
+dept: rigforge
+repo: mrodgersjs-web/rigforge
+role: >-
+  Provide the build and proof scaffolding every studio uses. Package-first,
+  deterministic, and reproducible across Python 3.11+ environments.
+boundary: >-
+  Build automation and proof contracts only. Production signing keys live
+  in CI secrets; the builder never logs or exposes them.
+trigger: >-
+  New package release, `rigforge init` call, or a sibling studio needs a
+  fresh proof contract scaffold.
+implementation: >-
+  Python package with CLI commands: demo, init, verify, benchmark.
+  Ships a planted-failure honesty benchmark by default.
+sla: >-
+  `rigforge demo` completes in < 30s on a fresh clone. Scaffolds are
+  byte-for-byte reproducible given the same inputs.
+heartbeat_cron: "0 * * * *"
+invariant: scripts/smoke.sh exists and is executable
+claim: pip install + rigforge demo passes and catches a planted forge
+owner: mrodgersjs-web
+status_branch: heartbeat
+queue_depth_metric: open build or scaffold requests
+last_action_metric: last package release or scaffold commit
