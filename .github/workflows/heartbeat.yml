@@ -112,12 +112,23 @@ jobs:
           set -euo pipefail
           git config user.name "agent-firm[bot]"
           git config user.email "agent-firm@users.noreply.github.com"
+          # Stash the freshly generated status files before switching branches --
+          # the heartbeat branch already tracks files at these same paths, and
+          # `git checkout` refuses to clobber untracked files that would be
+          # overwritten.
+          tmp_status="$(mktemp -d)"
+          cp -r status "$tmp_status/status"
+          cp badge.json "$tmp_status/badge.json"
+          git clean -fd status badge.json
           git fetch origin heartbeat || true
           if git rev-parse --verify origin/heartbeat >/dev/null 2>&1; then
             git checkout heartbeat
           else
             git checkout -b heartbeat
           fi
+          rm -rf status badge.json
+          cp -r "$tmp_status/status" status
+          cp "$tmp_status/badge.json" badge.json
           mkdir -p status
           git add status/*.json badge.json
           git commit -m "heartbeat: update fleet status [skip ci]" || true
