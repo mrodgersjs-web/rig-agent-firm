@@ -11,7 +11,7 @@
 
 <div align="center">
 
-![heartbeat](https://img.shields.io/endpoint?url=https%3A%2F%2Fraw.githubusercontent.com%2Fmrodgersjs-web%2Fagent-firm%2Fheartbeat%2Fbadge.json)
+![heartbeat](https://img.shields.io/endpoint?url=https%3A%2F%2Fraw.githubusercontent.com%2Fmrodgersjs-web%2Frig-agent-firm%2Fheartbeat%2Fbadge.json)
 ![agents](https://img.shields.io/badge/agents-6-C8A96E?style=flat-square&labelColor=0A0806)
 ![license](https://img.shields.io/badge/license-MIT-C8A96E?style=flat-square&labelColor=0A0806)
 
