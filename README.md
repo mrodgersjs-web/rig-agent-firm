@@ -37,9 +37,6 @@ cat badge.json
 
 ## How it works
 
-<div align="center">
-  <img src="assets/architecture.svg" width="100%" alt="Agent firm architecture: agent specs declare role and invariant, hourly heartbeat workflow checks each repo, writes status JSON, and regenerates the mission control badge" />
-</div>
 
 <sub align="center">agents/*.yaml spec → hourly heartbeat workflow → status JSON on heartbeat branch → dashboard.svg + badge.json</sub>
 
