@@ -6,7 +6,7 @@
   "status": "online",
   "invariant": "scripts/smoke.sh exists and is executable",
   "invariant_result": "smoke.sh is present and executable",
-  "checked_at": "2026-09-30T00:11:10Z",
-  "run_id": "36649047916",
-  "run_url": "https://github.com/mrodgersjs-web/rig-agent-firm/actions/runs/36649047916"
+  "checked_at": "2026-09-30T06:27:30Z",
+  "run_id": "36678309560",
+  "run_url": "https://github.com/mrodgersjs-web/rig-agent-firm/actions/runs/36678309560"
 }
