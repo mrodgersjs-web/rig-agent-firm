@@ -21,8 +21,6 @@ concurrency:
 jobs:
   heartbeat:
     runs-on: ubuntu-latest
-    env:
-      OUT: ${{ runner.temp }}/heartbeat
     steps:
       - name: Checkout agent-firm
         uses: actions/checkout@v5
@@ -30,6 +28,9 @@ jobs:
       - uses: actions/setup-python@v6
         with:
           python-version: "3.12"
+
+      - name: Set output dir
+        run: echo "OUT=$RUNNER_TEMP/heartbeat" >> "$GITHUB_ENV"
 
       - name: Install engine
         run: pip install .
