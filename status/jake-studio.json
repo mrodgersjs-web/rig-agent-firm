@@ -1,6 +1,6 @@
 {
   "agent": "operator",
-  "checked_at": "2026-10-11T00:49:01Z",
+  "checked_at": "2026-10-11T01:42:32Z",
   "checks": [
     {
       "detail": "scripts/smoke.sh exists on main and is executable",
@@ -15,15 +15,15 @@
       "url": "https://github.com/mrodgersjs-web/jake-studio/blob/main/scripts/smoke.sh"
     },
     {
-      "detail": "latest smoke.yml run on main succeeded 1.2h ago (limit 168h)",
+      "detail": "latest smoke.yml run on main succeeded 0.0h ago (limit 168h)",
       "ok": true,
       "params": {
         "workflow": "smoke.yml"
       },
-      "sha": "c3018565ccac419ec861a8533a12f26608d2a797",
-      "timestamp": "2026-10-10T23:39:51Z",
+      "sha": "65f4c4b23ad254a62dcfb55486587b324063bff0",
+      "timestamp": "2026-10-11T01:40:34Z",
       "type": "workflow_success",
-      "url": "https://github.com/mrodgersjs-web/jake-studio/actions/runs/38095782441"
+      "url": "https://github.com/mrodgersjs-web/jake-studio/actions/runs/38102604124"
     },
     {
       "detail": "latest release v0.1.0 published 2026-10-11T00:19:12Z",
@@ -36,14 +36,14 @@
     }
   ],
   "default_branch": "main",
-  "evidence_at": "2026-10-10T23:39:51Z",
+  "evidence_at": "2026-10-11T01:40:34Z",
   "invariant": "scripts/smoke.sh is executable on the default branch and the latest smoke.yml run on it succeeded inside the SLA window; a release is published",
-  "invariant_result": "ok: scripts/smoke.sh exists on main and is executable; ok: latest smoke.yml run on main succeeded 1.2h ago (limit 168h); ok: latest release v0.1.0 published 2026-10-11T00:19:12Z",
+  "invariant_result": "ok: scripts/smoke.sh exists on main and is executable; ok: latest smoke.yml run on main succeeded 0.0h ago (limit 168h); ok: latest release v0.1.0 published 2026-10-11T00:19:12Z",
   "owner": "mrodgersjs-web",
   "repo": "jake-studio",
   "role": "Execute plans through a builder-verifier closed loop. Owns the handoff artifact and escalates when confidence drops below the governance threshold.",
-  "run_url": "https://github.com/mrodgersjs-web/jake-studio/actions/runs/38095782441",
+  "run_url": "https://github.com/mrodgersjs-web/jake-studio/actions/runs/38102604124",
   "schema_version": 2,
-  "sha": "c3018565ccac419ec861a8533a12f26608d2a797",
+  "sha": "65f4c4b23ad254a62dcfb55486587b324063bff0",
   "status": "online"
 }

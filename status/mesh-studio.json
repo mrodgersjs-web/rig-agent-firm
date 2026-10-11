@@ -1,6 +1,6 @@
 {
   "agent": "fleet",
-  "checked_at": "2026-10-11T00:49:01Z",
+  "checked_at": "2026-10-11T01:42:32Z",
   "checks": [
     {
       "detail": "scripts/smoke.sh exists on main and is executable",
@@ -15,26 +15,26 @@
       "url": "https://github.com/mrodgersjs-web/mesh-studio/blob/main/scripts/smoke.sh"
     },
     {
-      "detail": "latest smoke.yml run on main succeeded 1.2h ago (limit 168h)",
+      "detail": "latest smoke.yml run on main succeeded 0.1h ago (limit 168h)",
       "ok": true,
       "params": {
         "workflow": "smoke.yml"
       },
-      "sha": "09555c98f6b6433ccb5c60549b88aaeb1d5beb7f",
-      "timestamp": "2026-10-10T23:38:06Z",
+      "sha": "2481cb5d5c6c44557241879d2928863d5e980cf5",
+      "timestamp": "2026-10-11T01:39:09Z",
       "type": "workflow_success",
-      "url": "https://github.com/mrodgersjs-web/mesh-studio/actions/runs/38095691096"
+      "url": "https://github.com/mrodgersjs-web/mesh-studio/actions/runs/38102533234"
     }
   ],
   "default_branch": "main",
-  "evidence_at": "2026-10-10T23:38:06Z",
+  "evidence_at": "2026-10-11T01:39:09Z",
   "invariant": "scripts/smoke.sh is executable on the default branch and the latest smoke.yml run on it succeeded inside the SLA window",
-  "invariant_result": "ok: scripts/smoke.sh exists on main and is executable; ok: latest smoke.yml run on main succeeded 1.2h ago (limit 168h)",
+  "invariant_result": "ok: scripts/smoke.sh exists on main and is executable; ok: latest smoke.yml run on main succeeded 0.1h ago (limit 168h)",
   "owner": "mrodgersjs-web",
   "repo": "mesh-studio",
   "role": "Keep the compute fleet healthy. Probe nodes, boot cold nodes, recover failed ones, and report status to the operator dashboard.",
-  "run_url": "https://github.com/mrodgersjs-web/mesh-studio/actions/runs/38095691096",
+  "run_url": "https://github.com/mrodgersjs-web/mesh-studio/actions/runs/38102533234",
   "schema_version": 2,
-  "sha": "09555c98f6b6433ccb5c60549b88aaeb1d5beb7f",
+  "sha": "2481cb5d5c6c44557241879d2928863d5e980cf5",
   "status": "online"
 }
