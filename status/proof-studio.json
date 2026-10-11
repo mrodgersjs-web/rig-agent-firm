@@ -1,12 +1,40 @@
 {
-  "schema_version": 1,
-  "repo": "proof-studio",
+  "agent": "verifier",
+  "checked_at": "2026-10-11T00:49:01Z",
+  "checks": [
+    {
+      "detail": "scripts/smoke.sh exists on main and is executable",
+      "ok": true,
+      "params": {
+        "executable": true,
+        "path": "scripts/smoke.sh"
+      },
+      "sha": "34ca4e9a9459df1857a82fc2534de02d8eeed41d",
+      "timestamp": "",
+      "type": "file_exists",
+      "url": "https://github.com/mrodgersjs-web/proof-studio/blob/main/scripts/smoke.sh"
+    },
+    {
+      "detail": "latest smoke.yml run on main succeeded 1.2h ago (limit 168h)",
+      "ok": true,
+      "params": {
+        "workflow": "smoke.yml"
+      },
+      "sha": "f967decd41fce26a9ac34639bbe141ed1a7ee63a",
+      "timestamp": "2026-10-10T23:34:37Z",
+      "type": "workflow_success",
+      "url": "https://github.com/mrodgersjs-web/proof-studio/actions/runs/38095495217"
+    }
+  ],
+  "default_branch": "main",
+  "evidence_at": "2026-10-10T23:34:37Z",
+  "invariant": "scripts/smoke.sh is executable on the default branch and the latest smoke.yml run on it succeeded inside the SLA window",
+  "invariant_result": "ok: scripts/smoke.sh exists on main and is executable; ok: latest smoke.yml run on main succeeded 1.2h ago (limit 168h)",
   "owner": "mrodgersjs-web",
-  "agent": "proof-studio",
-  "status": "online",
-  "invariant": "scripts/smoke.sh exists and is executable",
-  "invariant_result": "smoke.sh is present and executable",
-  "checked_at": "2026-10-10T22:20:33Z",
-  "run_id": "38091049745",
-  "run_url": "https://github.com/mrodgersjs-web/rig-agent-firm/actions/runs/38091049745"
+  "repo": "proof-studio",
+  "role": "Seal and verify completion claims. A forged BUILD COMPLETE must fail the HMAC signature check. No proof, no done.",
+  "run_url": "https://github.com/mrodgersjs-web/proof-studio/actions/runs/38095495217",
+  "schema_version": 2,
+  "sha": "f967decd41fce26a9ac34639bbe141ed1a7ee63a",
+  "status": "online"
 }
