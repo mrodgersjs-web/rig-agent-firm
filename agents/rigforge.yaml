@@ -19,8 +19,18 @@ implementation: >-
 sla: >-
   `rigforge demo` completes in < 30s on a fresh clone. Scaffolds are
   byte-for-byte reproducible given the same inputs.
+sla_hours: 168
+checks:
+  - type: file_exists
+    path: scripts/smoke.sh
+    executable: true
+  - type: workflow_success
+    workflow: smoke.yml
+  - type: release_exists
 heartbeat_cron: "0 * * * *"
-invariant: scripts/smoke.sh exists and is executable
+invariant: >-
+  scripts/smoke.sh is executable on the default branch and the latest smoke.yml run on it
+  succeeded inside the SLA window; a release is published
 claim: pip install + rigforge demo passes and catches a planted forge
 owner: mrodgersjs-web
 status_branch: heartbeat

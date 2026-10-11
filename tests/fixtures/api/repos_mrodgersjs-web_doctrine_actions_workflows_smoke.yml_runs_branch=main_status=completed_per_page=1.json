@@ -1,0 +1,29 @@
+{
+ "total_count": 6,
+ "workflow_runs": [
+  {
+   "check_suite_id": 92881013004,
+   "check_suite_node_id": "CS_kwDOTuE7Ws8AAAAVoCPJDA",
+   "conclusion": "success",
+   "created_at": "2026-09-08T22:25:41Z",
+   "display_title": "docs: move planning blocks out of public doctrine README",
+   "event": "push",
+   "head_branch": "main",
+   "head_sha": "ddb865fa05f1451b0d34291c71fa9375277f39f3",
+   "html_url": "https://github.com/mrodgersjs-web/doctrine/actions/runs/34285849231",
+   "id": 34285849231,
+   "name": "smoke",
+   "node_id": "WFR_kwLOTuE7Ws8AAAAH-5iKjw",
+   "path": ".github/workflows/smoke.yml",
+   "pull_requests": [],
+   "referenced_workflows": [],
+   "run_attempt": 1,
+   "run_number": 7,
+   "run_started_at": "2026-09-08T22:25:41Z",
+   "status": "completed",
+   "updated_at": "2026-09-08T22:25:49Z",
+   "url": "https://api.github.com/repos/mrodgersjs-web/doctrine/actions/runs/34285849231",
+   "workflow_id": 327423232
+  }
+ ]
+}

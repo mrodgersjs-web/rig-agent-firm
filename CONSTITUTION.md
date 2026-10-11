@@ -24,7 +24,7 @@ governed.
 
 ## Agent spec format
 
-Every agent is declared in `agents/<dept>.yaml` with these fields:
+Every agent is declared in `agents/<dept>.yaml` and checked by `agent-firm validate`. Fields:
 
 - `name` — short agent name
 - `dept` — repository the agent owns
@@ -35,7 +35,9 @@ Every agent is declared in `agents/<dept>.yaml` with these fields:
 - `implementation` — how it does its job
 - `sla` — expected behavior under normal operation
 - `heartbeat_cron` — when the firm checks this agent
-- `invariant` — the check the heartbeat runs
+- `sla_hours` — freshness window in hours (integer)
+- `invariant` — one-line description of what "alive" means
+- `checks` — list of machine checks (`file_exists`, `workflow_success`, `release_exists`, `commit_within`) the engine runs
 - `claim` — the public claim the invariant defends
 - `owner`, `status_branch`, `queue_depth_metric`, `last_action_metric`
 
@@ -43,22 +45,20 @@ Every agent is declared in `agents/<dept>.yaml` with these fields:
 
 `.github/workflows/heartbeat.yml` runs every hour. It:
 
-1. Checks out every fleet repo in a matrix job.
-2. Verifies the declared invariant (e.g., `scripts/smoke.sh` exists and is
-   executable).
-3. Writes a status JSON per repo.
-4. Generates `badge.json` for shields.io.
-5. Pushes the status JSONs and badge to the `heartbeat` branch.
+1. Installs this package and validates `agents/*.yaml`.
+2. Runs every agent's `checks` against its repo through the GitHub REST API.
+3. Writes a status JSON per repo, with run URL, commit SHA and timestamps as evidence.
+4. Generates `badge.json` for shields.io and `dashboard.svg`.
+5. Pushes the status JSONs, badge and dashboard to the `heartbeat` branch.
 
-A green badge means every monitored repo passed its invariant. A red badge
+A green badge means every monitored repo passed all its checks. A red badge
 means at least one failed.
 
 ## How to fork and instantiate
 
 1. Click **Use this template** or `git clone` this repository.
-2. Replace `mrodgersjs-web` in `agents/*.yaml` and `.github/workflows/heartbeat.yml`
-   with your GitHub owner.
-3. Edit the matrix in `.github/workflows/heartbeat.yml` to list your repos.
+2. Replace `mrodgersjs-web` in `agents/*.yaml` with your GitHub owner.
+3. Add or remove files under `agents/` to list your repos, then run `agent-firm validate`.
 4. Write an `invariant` per agent that is cheap, deterministic, and proves the
    agent is not dead.
 5. Enable GitHub Actions and create an empty `heartbeat` branch, or let the

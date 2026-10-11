@@ -1,0 +1,29 @@
+{
+ "total_count": 9,
+ "workflow_runs": [
+  {
+   "check_suite_id": 103217749324,
+   "check_suite_node_id": "CS_kwDOTuFM8s8AAAAYCEHdTA",
+   "conclusion": "success",
+   "created_at": "2026-10-10T23:39:29Z",
+   "display_title": "Merge pull request #1 from mrodgersjs-web/fix/rig-lattice-skip-until-\u2026",
+   "event": "push",
+   "head_branch": "main",
+   "head_sha": "c3018565ccac419ec861a8533a12f26608d2a797",
+   "html_url": "https://github.com/mrodgersjs-web/jake-studio/actions/runs/38095782441",
+   "id": 38095782441,
+   "name": "smoke",
+   "node_id": "WFR_kwLOTuFM8s8AAAAI3q-CKQ",
+   "path": ".github/workflows/smoke.yml",
+   "pull_requests": [],
+   "referenced_workflows": [],
+   "run_attempt": 1,
+   "run_number": 10,
+   "run_started_at": "2026-10-10T23:39:29Z",
+   "status": "completed",
+   "updated_at": "2026-10-10T23:39:51Z",
+   "url": "https://api.github.com/repos/mrodgersjs-web/jake-studio/actions/runs/38095782441",
+   "workflow_id": 327421239
+  }
+ ]
+}

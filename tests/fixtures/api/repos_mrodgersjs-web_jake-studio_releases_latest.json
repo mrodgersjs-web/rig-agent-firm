@@ -1,0 +1,17 @@
+{
+ "assets": [],
+ "body": "**v0.1.0** - jake-studio: source tree for the L10 harness (certainty, cognition, nocturne, agent factory modules) plus a Builder/Verifier example.\n\n- packages/l10 holds the Python modules and tests; packages/operator has loader scripts.\n- examples/closed-loop-builder-verifier documents the pattern with a cap of 3 feedback rounds.\n- Docs include the public boundary and a video script.\n- Smoke test: cd packages/l10 && python3 -m compileall -q src (a compile check only).\n",
+ "created_at": "2026-10-10T23:39:26Z",
+ "draft": false,
+ "html_url": "https://github.com/mrodgersjs-web/jake-studio/releases/tag/v0.1.0",
+ "id": 409288279,
+ "immutable": false,
+ "name": "v0.1.0",
+ "node_id": "RE_kwDOTuFM8s4YZT5X",
+ "prerelease": false,
+ "published_at": "2026-10-11T00:19:12Z",
+ "tag_name": "v0.1.0",
+ "target_commitish": "main",
+ "updated_at": "2026-10-11T00:19:12Z",
+ "url": "https://api.github.com/repos/mrodgersjs-web/jake-studio/releases/409288279"
+}
