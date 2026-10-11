@@ -19,8 +19,17 @@ implementation: >-
 sla: >-
   P95 verification latency < 5s. 100% of planted forgeries must be caught.
   Status updated within one heartbeat window.
+sla_hours: 168
+checks:
+  - type: file_exists
+    path: scripts/smoke.sh
+    executable: true
+  - type: workflow_success
+    workflow: smoke.yml
 heartbeat_cron: "0 * * * *"
-invariant: scripts/smoke.sh exists and is executable
+invariant: >-
+  scripts/smoke.sh is executable on the default branch and the latest smoke.yml run on it
+  succeeded inside the SLA window
 claim: rigforge demo catches a forged BUILD COMPLETE
 owner: mrodgersjs-web
 status_branch: heartbeat

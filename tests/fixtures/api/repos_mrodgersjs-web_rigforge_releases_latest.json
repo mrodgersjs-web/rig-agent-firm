@@ -1,0 +1,17 @@
+{
+ "assets": [],
+ "body": "**v0.1.0** - RIGForge: seal an agent's 'done' claim in an HMAC-signed ProofPacket and verify it later.\n\n- rigforge demo forges a tampered artifact with a re-computed hash; the plain integrity check passes and the signature check fails.\n- rigforge init, run, seal and verify --require-signature drive the packet workflow.\n- rigforge benchmark runs 16 seeded offline scenarios (8 honest, 8 forged); all 16 verdicts were correct on the default seed. --leaderboard compares naive, signed and spec-bound checks.\n- rigforge mcp-serve exposes contract and proof tools over MCP.\n- Smoke test: pip install -e . then rigforge demo.\n",
+ "created_at": "2026-09-08T22:04:04Z",
+ "draft": false,
+ "html_url": "https://github.com/mrodgersjs-web/rigforge/releases/tag/v0.1.0",
+ "id": 409288265,
+ "immutable": false,
+ "name": "v0.1.0",
+ "node_id": "RE_kwDOTuDUSc4YZT5J",
+ "prerelease": false,
+ "published_at": "2026-10-11T00:19:10Z",
+ "tag_name": "v0.1.0",
+ "target_commitish": "main",
+ "updated_at": "2026-10-11T00:19:10Z",
+ "url": "https://api.github.com/repos/mrodgersjs-web/rigforge/releases/409288265"
+}

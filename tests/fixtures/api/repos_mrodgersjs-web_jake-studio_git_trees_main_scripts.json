@@ -1,0 +1,15 @@
+{
+ "sha": "e93704fae937d021c4654650cb5d43225ff1c835",
+ "tree": [
+  {
+   "mode": "100755",
+   "path": "smoke.sh",
+   "sha": "f30023849fcb9ef90413dbffef79a6f61a6315c7",
+   "size": 328,
+   "type": "blob",
+   "url": "https://api.github.com/repos/mrodgersjs-web/jake-studio/git/blobs/f30023849fcb9ef90413dbffef79a6f61a6315c7"
+  }
+ ],
+ "truncated": false,
+ "url": "https://api.github.com/repos/mrodgersjs-web/jake-studio/git/trees/e93704fae937d021c4654650cb5d43225ff1c835"
+}

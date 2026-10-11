@@ -19,8 +19,17 @@ implementation: >-
 sla: >-
   Rules loaded by an agent in < 1 second. Drift alerts emitted within
   1 hour of any unauthorized rule change.
+sla_hours: 168
+checks:
+  - type: file_exists
+    path: scripts/smoke.sh
+    executable: true
+  - type: workflow_success
+    workflow: smoke.yml
 heartbeat_cron: "0 * * * *"
-invariant: scripts/smoke.sh exists and is executable
+invariant: >-
+  scripts/smoke.sh is executable on the default branch and the latest smoke.yml run on it
+  succeeded inside the SLA window
 claim: rule index parses and all loaded rules have a version tag
 owner: mrodgersjs-web
 status_branch: heartbeat

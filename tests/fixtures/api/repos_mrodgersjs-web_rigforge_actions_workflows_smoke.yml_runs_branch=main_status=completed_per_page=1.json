@@ -1,0 +1,29 @@
+{
+ "total_count": 7,
+ "workflow_runs": [
+  {
+   "check_suite_id": 92876060318,
+   "check_suite_node_id": "CS_kwDOTuDUSc8AAAAVn9g2ng",
+   "conclusion": "success",
+   "created_at": "2026-09-08T22:04:09Z",
+   "display_title": "fix(mcp): standard results, required gates, notification semantics",
+   "event": "push",
+   "head_branch": "main",
+   "head_sha": "7ddca26e0379f188bb0f9566c88dec84347e9592",
+   "html_url": "https://github.com/mrodgersjs-web/rigforge/actions/runs/34283965430",
+   "id": 34283965430,
+   "name": "smoke",
+   "node_id": "WFR_kwLOTuDUSc8AAAAH-3vL9g",
+   "path": ".github/workflows/smoke.yml",
+   "pull_requests": [],
+   "referenced_workflows": [],
+   "run_attempt": 1,
+   "run_number": 10,
+   "run_started_at": "2026-09-08T22:04:09Z",
+   "status": "completed",
+   "updated_at": "2026-09-08T22:04:25Z",
+   "url": "https://api.github.com/repos/mrodgersjs-web/rigforge/actions/runs/34283965430",
+   "workflow_id": 327423821
+  }
+ ]
+}
