@@ -1,6 +1,6 @@
 {
   "agent": "fleet",
-  "checked_at": "2026-10-11T20:03:40Z",
+  "checked_at": "2026-10-12T00:20:21Z",
   "checks": [
     {
       "detail": "scripts/smoke.sh exists on main and is executable",
@@ -15,7 +15,7 @@
       "url": "https://github.com/mrodgersjs-web/mesh-studio/blob/main/scripts/smoke.sh"
     },
     {
-      "detail": "latest smoke.yml run on main succeeded 18.4h ago (limit 168h)",
+      "detail": "latest smoke.yml run on main succeeded 22.7h ago (limit 168h)",
       "ok": true,
       "params": {
         "workflow": "smoke.yml"
@@ -29,7 +29,7 @@
   "default_branch": "main",
   "evidence_at": "2026-10-11T01:39:09Z",
   "invariant": "scripts/smoke.sh is executable on the default branch and the latest smoke.yml run on it succeeded inside the SLA window",
-  "invariant_result": "ok: scripts/smoke.sh exists on main and is executable; ok: latest smoke.yml run on main succeeded 18.4h ago (limit 168h)",
+  "invariant_result": "ok: scripts/smoke.sh exists on main and is executable; ok: latest smoke.yml run on main succeeded 22.7h ago (limit 168h)",
   "owner": "mrodgersjs-web",
   "repo": "mesh-studio",
   "role": "Keep the compute fleet healthy. Probe nodes, boot cold nodes, recover failed ones, and report status to the operator dashboard.",
