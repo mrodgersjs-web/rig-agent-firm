@@ -1,0 +1,14 @@
+[
+ {
+  "created_at": "2026-10-11T08:14:13Z",
+  "html_url": "https://github.com/mrodgersjs-web/strategy-studio/pull/3",
+  "labels": [],
+  "number": 3,
+  "pull_request": {
+   "html_url": "https://github.com/mrodgersjs-web/strategy-studio/pull/3",
+   "merged_at": null,
+   "url": "https://api.github.com/repos/mrodgersjs-web/strategy-studio/pulls/3"
+  },
+  "title": "Guard strategy calculators against nonfinite results"
+ }
+]

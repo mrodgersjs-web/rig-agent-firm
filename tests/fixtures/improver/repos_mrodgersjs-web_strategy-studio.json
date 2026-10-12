@@ -1,0 +1,48 @@
+{
+ "archived": false,
+ "default_branch": "main",
+ "description": "Deterministic strategy routing \u2014 public keyword-based router surface; deeper scoring/audit-trail logic stays in private client packs.",
+ "fork": false,
+ "full_name": "mrodgersjs-web/strategy-studio",
+ "has_issues": true,
+ "html_url": "https://github.com/mrodgersjs-web/strategy-studio",
+ "license": {
+  "key": "mit",
+  "name": "MIT License",
+  "node_id": "MDc6TGljZW5zZTEz",
+  "spdx_id": "MIT",
+  "url": "https://api.github.com/licenses/mit"
+ },
+ "name": "strategy-studio",
+ "private": false,
+ "security_and_analysis": {
+  "dependabot_security_updates": {
+   "status": "disabled"
+  },
+  "secret_scanning": {
+   "status": "enabled"
+  },
+  "secret_scanning_non_provider_patterns": {
+   "status": "disabled"
+  },
+  "secret_scanning_push_protection": {
+   "status": "enabled"
+  },
+  "secret_scanning_validity_checks": {
+   "status": "disabled"
+  }
+ },
+ "topics": [
+  "agent-governance",
+  "ai-agents",
+  "decision-support",
+  "evals",
+  "forward-deployed-engineer",
+  "llm",
+  "mlops",
+  "proof-gates",
+  "python",
+  "routing"
+ ],
+ "visibility": "public"
+}

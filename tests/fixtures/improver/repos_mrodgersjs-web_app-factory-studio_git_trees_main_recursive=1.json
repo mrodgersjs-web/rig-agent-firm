@@ -1,0 +1,255 @@
+{
+ "tree": [
+  {
+   "mode": "040000",
+   "path": ".github",
+   "type": "tree"
+  },
+  {
+   "mode": "040000",
+   "path": ".github/workflows",
+   "type": "tree"
+  },
+  {
+   "mode": "100644",
+   "path": ".github/workflows/ci.yml",
+   "type": "blob"
+  },
+  {
+   "mode": "100644",
+   "path": ".github/workflows/rig-lattice.yml",
+   "type": "blob"
+  },
+  {
+   "mode": "100644",
+   "path": ".gitignore",
+   "type": "blob"
+  },
+  {
+   "mode": "040000",
+   "path": ".rig",
+   "type": "tree"
+  },
+  {
+   "mode": "040000",
+   "path": ".rig/hooks",
+   "type": "tree"
+  },
+  {
+   "mode": "100755",
+   "path": ".rig/hooks/pre-tool",
+   "type": "blob"
+  },
+  {
+   "mode": "100644",
+   "path": ".rig/loop.yaml",
+   "type": "blob"
+  },
+  {
+   "mode": "100644",
+   "path": ".rig/work-routing.yaml",
+   "type": "blob"
+  },
+  {
+   "mode": "100644",
+   "path": "AGENTS.md",
+   "type": "blob"
+  },
+  {
+   "mode": "100644",
+   "path": "CONTRIBUTING.md",
+   "type": "blob"
+  },
+  {
+   "mode": "100644",
+   "path": "LICENSE",
+   "type": "blob"
+  },
+  {
+   "mode": "100644",
+   "path": "README.md",
+   "type": "blob"
+  },
+  {
+   "mode": "100644",
+   "path": "SECURITY.md",
+   "type": "blob"
+  },
+  {
+   "mode": "040000",
+   "path": "assets",
+   "type": "tree"
+  },
+  {
+   "mode": "100644",
+   "path": "assets/app-factory-studio-hero.png",
+   "type": "blob"
+  },
+  {
+   "mode": "100644",
+   "path": "assets/architecture.svg",
+   "type": "blob"
+  },
+  {
+   "mode": "100644",
+   "path": "assets/demo.gif",
+   "type": "blob"
+  },
+  {
+   "mode": "100644",
+   "path": "assets/demo.mp4",
+   "type": "blob"
+  },
+  {
+   "mode": "040000",
+   "path": "docs",
+   "type": "tree"
+  },
+  {
+   "mode": "100644",
+   "path": "docs/architecture.md",
+   "type": "blob"
+  },
+  {
+   "mode": "100644",
+   "path": "docs/evaluation-strategy.md",
+   "type": "blob"
+  },
+  {
+   "mode": "100644",
+   "path": "docs/public-boundary.md",
+   "type": "blob"
+  },
+  {
+   "mode": "100644",
+   "path": "docs/video-script.md",
+   "type": "blob"
+  },
+  {
+   "mode": "040000",
+   "path": "examples",
+   "type": "tree"
+  },
+  {
+   "mode": "100644",
+   "path": "examples/inventory-cli.md",
+   "type": "blob"
+  },
+  {
+   "mode": "100644",
+   "path": "examples/sample-spec.md",
+   "type": "blob"
+  },
+  {
+   "mode": "040000",
+   "path": "mcp",
+   "type": "tree"
+  },
+  {
+   "mode": "100755",
+   "path": "mcp/server.py",
+   "type": "blob"
+  },
+  {
+   "mode": "100644",
+   "path": "pyproject.toml",
+   "type": "blob"
+  },
+  {
+   "mode": "100644",
+   "path": "rig.repos.json",
+   "type": "blob"
+  },
+  {
+   "mode": "040000",
+   "path": "scripts",
+   "type": "tree"
+  },
+  {
+   "mode": "100755",
+   "path": "scripts/smoke.sh",
+   "type": "blob"
+  },
+  {
+   "mode": "040000",
+   "path": "src",
+   "type": "tree"
+  },
+  {
+   "mode": "040000",
+   "path": "src/app_factory",
+   "type": "tree"
+  },
+  {
+   "mode": "100644",
+   "path": "src/app_factory/__init__.py",
+   "type": "blob"
+  },
+  {
+   "mode": "100644",
+   "path": "src/app_factory/cli.py",
+   "type": "blob"
+  },
+  {
+   "mode": "100644",
+   "path": "src/app_factory/gate.py",
+   "type": "blob"
+  },
+  {
+   "mode": "100644",
+   "path": "src/app_factory/render.py",
+   "type": "blob"
+  },
+  {
+   "mode": "100644",
+   "path": "src/app_factory/spec.py",
+   "type": "blob"
+  },
+  {
+   "mode": "040000",
+   "path": "src/app_factory/templates",
+   "type": "tree"
+  },
+  {
+   "mode": "100644",
+   "path": "src/app_factory/templates/__init__.py",
+   "type": "blob"
+  },
+  {
+   "mode": "100644",
+   "path": "src/app_factory/templates/cli_app.py",
+   "type": "blob"
+  },
+  {
+   "mode": "100644",
+   "path": "src/app_factory/templates/common.py",
+   "type": "blob"
+  },
+  {
+   "mode": "100644",
+   "path": "src/app_factory/templates/rest_api.py",
+   "type": "blob"
+  },
+  {
+   "mode": "040000",
+   "path": "tests",
+   "type": "tree"
+  },
+  {
+   "mode": "100644",
+   "path": "tests/test_cli.py",
+   "type": "blob"
+  },
+  {
+   "mode": "100644",
+   "path": "tests/test_gate.py",
+   "type": "blob"
+  },
+  {
+   "mode": "100644",
+   "path": "tests/test_spec.py",
+   "type": "blob"
+  }
+ ],
+ "truncated": false
+}

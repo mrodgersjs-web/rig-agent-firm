@@ -1,0 +1,13 @@
+{
+ "languages": [
+  "actions",
+  "python"
+ ],
+ "query_suite": "default",
+ "runner_label": null,
+ "runner_type": "standard",
+ "schedule": null,
+ "state": "not-configured",
+ "threat_model": "remote",
+ "updated_at": null
+}

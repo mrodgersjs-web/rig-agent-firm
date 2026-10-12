@@ -1,0 +1,73 @@
+name: Improver (nightly)
+
+# MEASURE + PICK every night. Issue opening is opt-in and the Improver never merges:
+# the job token is read-only, and agent_firm/github.py refuses merge, review and
+# auto-merge endpoints in code. Merges stay with the human owner.
+
+on:
+  schedule:
+    - cron: '17 8 * * *'
+  workflow_dispatch:
+    inputs:
+      repos:
+        description: 'Comma-separated repos to score (empty = every repo labeled studio/foundry/capability)'
+        required: false
+        default: ''
+
+permissions:
+  contents: read
+
+concurrency:
+  group: improver
+  cancel-in-progress: false
+
+jobs:
+  improver:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+
+      - name: Set output dir
+        run: echo "OUT=$RUNNER_TEMP/improver" >> "$GITHUB_ENV"
+
+      - name: Install engine
+        run: pip install .
+
+      - name: Validate agent specs
+        run: agent-firm validate --agents agents
+
+      - name: Measure (GitHub REST API, workflow token)
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+          REPOS: ${{ inputs.repos }}
+        run: agent-firm improver measure --out "$OUT" --repos "$REPOS"
+
+      - name: Pick (dry run)
+        run: agent-firm improver pick --scorecard "$OUT/scorecard.json" --out "$OUT"
+
+      - name: Open the picked issue (opt-in)
+        # Off unless the repository variable IMPROVER_OPEN_ISSUES is 'true' and an
+        # IMPROVER_TOKEN with issues:write on the target repos exists. Never merges.
+        if: ${{ vars.IMPROVER_OPEN_ISSUES == 'true' }}
+        env:
+          GITHUB_TOKEN: ${{ secrets.IMPROVER_TOKEN }}
+        run: agent-firm improver pick --scorecard "$OUT/scorecard.json" --out "$OUT" --open-issue
+
+      - name: Job summary
+        if: always()
+        run: |
+          if [ -f "$OUT/scorecard.md" ]; then cat "$OUT/scorecard.md" >> "$GITHUB_STEP_SUMMARY"; fi
+          if [ -f "$OUT/picks.md" ]; then cat "$OUT/picks.md" >> "$GITHUB_STEP_SUMMARY"; fi
+
+      - name: Upload scorecard
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: improver-scorecard
+          path: ${{ runner.temp }}/improver
+          if-no-files-found: error
+          retention-days: 30

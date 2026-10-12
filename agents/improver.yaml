@@ -1,0 +1,69 @@
+# Agent spec: rig-agent-firm
+# Role: Improver — nightly measure / pick / PR loop for every studio, foundry and capability repo.
+
+name: improver
+dept: rig-agent-firm
+repo: mrodgersjs-web/rig-agent-firm
+role: >-
+  Run the nightly continuous-improvement loop for every repo labeled studio,
+  foundry or capability. MEASURE a scorecard per repo, PICK the lowest-scoring
+  area and open one scoped issue, BUILD a PR on a branch for that issue, VERIFY
+  that the PR has green CI and a review, leave SHIP (the merge) to the human
+  owner, and RECORD before/after score receipts.
+boundary: >-
+  Merges stay with the human; the Improver only opens issues and PRs. It never
+  merges, never enables auto-merge, never approves its own PR, never pushes to a
+  default branch, and never touches settings, secrets, tags or releases. The
+  GitHub client refuses merge, review and auto-merge endpoints in code.
+trigger: >-
+  Nightly schedule (.github/workflows/improver.yml), or a manual
+  `agent-firm improver measure` run.
+implementation: >-
+  `agent-firm improver measure` scores each in-scope repo through the GitHub
+  REST API and writes scorecard.json + scorecard.md; `improver pick` turns each
+  repo's lowest dimension into one scoped issue draft (opened only with
+  --open-issue); `improver verify` checks a PR's CI and review state;
+  `improver record` diffs two scorecards into a before/after receipt.
+sla: >-
+  One scorecard per night covering every in-scope repo, at most one new
+  improver issue per night, and a receipt for every merged improvement.
+sla_hours: 168
+checks:
+  - type: file_exists
+    path: scripts/smoke.sh
+    executable: true
+  - type: workflow_success
+    workflow: ci.yml
+heartbeat_cron: "0 * * * *"
+invariant: >-
+  scripts/smoke.sh is executable on the default branch and the latest ci.yml run on it
+  succeeded inside the SLA window
+claim: nightly scorecard is produced from live GitHub data and no improver PR is ever auto-merged
+owner: mrodgersjs-web
+status_branch: heartbeat
+queue_depth_metric: open issues labeled improver across in-scope repos
+last_action_metric: last scorecard artifact or improver issue opened
+improver:
+  cadence: nightly
+  cron: "17 8 * * *"
+  phases: [measure, pick, build, verify, ship, record]
+  scope:
+    owner: mrodgersjs-web
+    # A repo is in scope when a GitHub topic or a name token (split on - and _)
+    # matches a label; plurals count (capabilities -> capability).
+    labels: [studio, foundry, capability]
+    visibility: public
+  scorecard:
+    - ci_smoke
+    - tests_coverage
+    - stranger_time
+    - readme_quality
+    - hero_image
+    - release_cadence
+    - issue_age
+    - security_basics
+  pick:
+    max_issues_per_night: 1
+    issue_label: improver
+  merge_policy: human_only
+  auto_merge: false
