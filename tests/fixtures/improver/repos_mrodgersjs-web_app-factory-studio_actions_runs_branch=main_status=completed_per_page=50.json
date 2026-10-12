@@ -1,0 +1,115 @@
+{
+ "total_count": 10,
+ "workflow_runs": [
+  {
+   "conclusion": "skipped",
+   "created_at": "2026-10-11T01:39:19Z",
+   "head_sha": "b465d6808993bb5dd5c657a6e538076aa0cbbf0f",
+   "html_url": "https://github.com/mrodgersjs-web/app-factory-studio/actions/runs/38102552966",
+   "name": "rig-lattice",
+   "path": ".github/workflows/rig-lattice.yml",
+   "status": "completed",
+   "updated_at": "2026-10-11T01:39:20Z",
+   "workflow_id": 356703380
+  },
+  {
+   "conclusion": "success",
+   "created_at": "2026-10-11T01:39:19Z",
+   "head_sha": "b465d6808993bb5dd5c657a6e538076aa0cbbf0f",
+   "html_url": "https://github.com/mrodgersjs-web/app-factory-studio/actions/runs/38102552840",
+   "name": "ci",
+   "path": ".github/workflows/ci.yml",
+   "status": "completed",
+   "updated_at": "2026-10-11T01:39:55Z",
+   "workflow_id": 380913894
+  },
+  {
+   "conclusion": "skipped",
+   "created_at": "2026-10-10T23:40:57Z",
+   "head_sha": "fc9dc53b2bc4285d73f58aef82f412ed1e0523d3",
+   "html_url": "https://github.com/mrodgersjs-web/app-factory-studio/actions/runs/38095868282",
+   "name": "rig-lattice",
+   "path": ".github/workflows/rig-lattice.yml",
+   "status": "completed",
+   "updated_at": "2026-10-10T23:40:58Z",
+   "workflow_id": 356703380
+  },
+  {
+   "conclusion": "success",
+   "created_at": "2026-10-10T23:40:57Z",
+   "head_sha": "fc9dc53b2bc4285d73f58aef82f412ed1e0523d3",
+   "html_url": "https://github.com/mrodgersjs-web/app-factory-studio/actions/runs/38095868290",
+   "name": "smoke",
+   "path": ".github/workflows/smoke.yml",
+   "status": "completed",
+   "updated_at": "2026-10-10T23:41:10Z",
+   "workflow_id": 327422079
+  },
+  {
+   "conclusion": "failure",
+   "created_at": "2026-09-12T19:23:00Z",
+   "head_sha": "baca5e71ca8ac39a7e69c7d3cef1703098998680",
+   "html_url": "https://github.com/mrodgersjs-web/app-factory-studio/actions/runs/34714006796",
+   "name": "rig-lattice",
+   "path": ".github/workflows/rig-lattice.yml",
+   "status": "completed",
+   "updated_at": "2026-09-12T19:23:12Z",
+   "workflow_id": 356703380
+  },
+  {
+   "conclusion": "success",
+   "created_at": "2026-09-12T19:23:00Z",
+   "head_sha": "baca5e71ca8ac39a7e69c7d3cef1703098998680",
+   "html_url": "https://github.com/mrodgersjs-web/app-factory-studio/actions/runs/34714006799",
+   "name": "smoke",
+   "path": ".github/workflows/smoke.yml",
+   "status": "completed",
+   "updated_at": "2026-09-12T19:23:15Z",
+   "workflow_id": 327422079
+  },
+  {
+   "conclusion": "success",
+   "created_at": "2026-08-06T15:16:13Z",
+   "head_sha": "7cde294dc0c75f556bfffa71f6cc99b175f6e3b9",
+   "html_url": "https://github.com/mrodgersjs-web/app-factory-studio/actions/runs/31115017785",
+   "name": "smoke",
+   "path": ".github/workflows/smoke.yml",
+   "status": "completed",
+   "updated_at": "2026-08-06T15:16:40Z",
+   "workflow_id": 327422079
+  },
+  {
+   "conclusion": "success",
+   "created_at": "2026-08-06T03:18:02Z",
+   "head_sha": "567a6a70b45bcdab6bb880b9fdc262403ac239e7",
+   "html_url": "https://github.com/mrodgersjs-web/app-factory-studio/actions/runs/31068052447",
+   "name": "smoke",
+   "path": ".github/workflows/smoke.yml",
+   "status": "completed",
+   "updated_at": "2026-08-06T03:18:17Z",
+   "workflow_id": 327422079
+  },
+  {
+   "conclusion": "success",
+   "created_at": "2026-08-05T21:56:58Z",
+   "head_sha": "f788554adb9b0986e6fefa3467bc5bf958192088",
+   "html_url": "https://github.com/mrodgersjs-web/app-factory-studio/actions/runs/31050792334",
+   "name": "smoke",
+   "path": ".github/workflows/smoke.yml",
+   "status": "completed",
+   "updated_at": "2026-08-05T21:57:19Z",
+   "workflow_id": 327422079
+  },
+  {
+   "conclusion": "success",
+   "created_at": "2026-08-04T23:48:22Z",
+   "head_sha": "48b271fff45d7d73afd7e4b081c12d276e3ed6e1",
+   "html_url": "https://github.com/mrodgersjs-web/app-factory-studio/actions/runs/30961217654",
+   "name": "smoke",
+   "path": ".github/workflows/smoke.yml",
+   "status": "completed",
+   "updated_at": "2026-08-04T23:48:49Z",
+   "workflow_id": 327422079
+  }
+ ]
+}

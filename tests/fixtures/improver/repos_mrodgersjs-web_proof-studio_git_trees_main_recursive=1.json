@@ -1,0 +1,715 @@
+{
+ "tree": [
+  {
+   "mode": "040000",
+   "path": ".github",
+   "type": "tree"
+  },
+  {
+   "mode": "100644",
+   "path": ".github/CODEOWNERS",
+   "type": "blob"
+  },
+  {
+   "mode": "100644",
+   "path": ".github/copilot-instructions.md",
+   "type": "blob"
+  },
+  {
+   "mode": "040000",
+   "path": ".github/workflows",
+   "type": "tree"
+  },
+  {
+   "mode": "100644",
+   "path": ".github/workflows/ci.yml",
+   "type": "blob"
+  },
+  {
+   "mode": "100644",
+   "path": ".github/workflows/rig-lattice.yml",
+   "type": "blob"
+  },
+  {
+   "mode": "100644",
+   "path": ".github/workflows/smoke.yml",
+   "type": "blob"
+  },
+  {
+   "mode": "100644",
+   "path": ".gitignore",
+   "type": "blob"
+  },
+  {
+   "mode": "100644",
+   "path": ".ignore",
+   "type": "blob"
+  },
+  {
+   "mode": "040000",
+   "path": ".rig",
+   "type": "tree"
+  },
+  {
+   "mode": "040000",
+   "path": ".rig/hooks",
+   "type": "tree"
+  },
+  {
+   "mode": "100755",
+   "path": ".rig/hooks/pre-tool",
+   "type": "blob"
+  },
+  {
+   "mode": "100644",
+   "path": ".rig/loop.yaml",
+   "type": "blob"
+  },
+  {
+   "mode": "100644",
+   "path": ".rig/work-routing.yaml",
+   "type": "blob"
+  },
+  {
+   "mode": "100644",
+   "path": "AGENTS.md",
+   "type": "blob"
+  },
+  {
+   "mode": "100644",
+   "path": "CONTRIBUTING.md",
+   "type": "blob"
+  },
+  {
+   "mode": "100644",
+   "path": "LICENSE",
+   "type": "blob"
+  },
+  {
+   "mode": "100644",
+   "path": "README.md",
+   "type": "blob"
+  },
+  {
+   "mode": "100644",
+   "path": "SECURITY.md",
+   "type": "blob"
+  },
+  {
+   "mode": "040000",
+   "path": "assets",
+   "type": "tree"
+  },
+  {
+   "mode": "100644",
+   "path": "assets/architecture.svg",
+   "type": "blob"
+  },
+  {
+   "mode": "100644",
+   "path": "assets/banner-proof-studio.svg",
+   "type": "blob"
+  },
+  {
+   "mode": "100644",
+   "path": "assets/demo.gif",
+   "type": "blob"
+  },
+  {
+   "mode": "100644",
+   "path": "assets/demo.html",
+   "type": "blob"
+  },
+  {
+   "mode": "100644",
+   "path": "assets/demo.mp4",
+   "type": "blob"
+  },
+  {
+   "mode": "100644",
+   "path": "assets/proof-studio-hero.png",
+   "type": "blob"
+  },
+  {
+   "mode": "040000",
+   "path": "docs",
+   "type": "tree"
+  },
+  {
+   "mode": "100644",
+   "path": "docs/architecture.md",
+   "type": "blob"
+  },
+  {
+   "mode": "100644",
+   "path": "docs/evaluation-strategy.md",
+   "type": "blob"
+  },
+  {
+   "mode": "100644",
+   "path": "docs/proof-studio-demo.gif",
+   "type": "blob"
+  },
+  {
+   "mode": "100644",
+   "path": "docs/proof-studio-demo.tape",
+   "type": "blob"
+  },
+  {
+   "mode": "100644",
+   "path": "docs/public-boundary.md",
+   "type": "blob"
+  },
+  {
+   "mode": "100644",
+   "path": "docs/video-script.md",
+   "type": "blob"
+  },
+  {
+   "mode": "040000",
+   "path": "mcp",
+   "type": "tree"
+  },
+  {
+   "mode": "100755",
+   "path": "mcp/server.py",
+   "type": "blob"
+  },
+  {
+   "mode": "040000",
+   "path": "packages",
+   "type": "tree"
+  },
+  {
+   "mode": "040000",
+   "path": "packages/rigforge",
+   "type": "tree"
+  },
+  {
+   "mode": "100644",
+   "path": "packages/rigforge/.editorconfig",
+   "type": "blob"
+  },
+  {
+   "mode": "040000",
+   "path": "packages/rigforge/.github",
+   "type": "tree"
+  },
+  {
+   "mode": "100644",
+   "path": "packages/rigforge/.github/dependabot.yml",
+   "type": "blob"
+  },
+  {
+   "mode": "040000",
+   "path": "packages/rigforge/.github/workflows",
+   "type": "tree"
+  },
+  {
+   "mode": "100644",
+   "path": "packages/rigforge/.github/workflows/ci.yml",
+   "type": "blob"
+  },
+  {
+   "mode": "100644",
+   "path": "packages/rigforge/.gitignore",
+   "type": "blob"
+  },
+  {
+   "mode": "100644",
+   "path": "packages/rigforge/.pre-commit-config.yaml",
+   "type": "blob"
+  },
+  {
+   "mode": "100644",
+   "path": "packages/rigforge/CONTRIBUTING.md",
+   "type": "blob"
+  },
+  {
+   "mode": "100644",
+   "path": "packages/rigforge/LICENSE",
+   "type": "blob"
+  },
+  {
+   "mode": "100644",
+   "path": "packages/rigforge/README.md",
+   "type": "blob"
+  },
+  {
+   "mode": "100644",
+   "path": "packages/rigforge/SECURITY.md",
+   "type": "blob"
+  },
+  {
+   "mode": "040000",
+   "path": "packages/rigforge/contracts",
+   "type": "tree"
+  },
+  {
+   "mode": "040000",
+   "path": "packages/rigforge/contracts/v1",
+   "type": "tree"
+  },
+  {
+   "mode": "100644",
+   "path": "packages/rigforge/contracts/v1/__init__.py",
+   "type": "blob"
+  },
+  {
+   "mode": "040000",
+   "path": "packages/rigforge/contracts/v1/models",
+   "type": "tree"
+  },
+  {
+   "mode": "100644",
+   "path": "packages/rigforge/contracts/v1/models/__init__.py",
+   "type": "blob"
+  },
+  {
+   "mode": "100644",
+   "path": "packages/rigforge/contracts/v1/models/acceptance_criterion.py",
+   "type": "blob"
+  },
+  {
+   "mode": "100644",
+   "path": "packages/rigforge/contracts/v1/models/done_contract.py",
+   "type": "blob"
+  },
+  {
+   "mode": "100644",
+   "path": "packages/rigforge/contracts/v1/models/forbidden_action.py",
+   "type": "blob"
+  },
+  {
+   "mode": "100644",
+   "path": "packages/rigforge/contracts/v1/models/required_artifact.py",
+   "type": "blob"
+  },
+  {
+   "mode": "100644",
+   "path": "packages/rigforge/contracts/v1/models/verifier_package.py",
+   "type": "blob"
+  },
+  {
+   "mode": "040000",
+   "path": "packages/rigforge/contracts/v1/schemas",
+   "type": "tree"
+  },
+  {
+   "mode": "100644",
+   "path": "packages/rigforge/contracts/v1/schemas/acceptance_criterion.yaml",
+   "type": "blob"
+  },
+  {
+   "mode": "100644",
+   "path": "packages/rigforge/contracts/v1/schemas/done_contract.yaml",
+   "type": "blob"
+  },
+  {
+   "mode": "100644",
+   "path": "packages/rigforge/contracts/v1/schemas/forbidden_action.yaml",
+   "type": "blob"
+  },
+  {
+   "mode": "100644",
+   "path": "packages/rigforge/contracts/v1/schemas/required_artifact.yaml",
+   "type": "blob"
+  },
+  {
+   "mode": "100644",
+   "path": "packages/rigforge/contracts/v1/schemas/verifier_package.yaml",
+   "type": "blob"
+  },
+  {
+   "mode": "040000",
+   "path": "packages/rigforge/contracts/v1/tests",
+   "type": "tree"
+  },
+  {
+   "mode": "100644",
+   "path": "packages/rigforge/contracts/v1/tests/__init__.py",
+   "type": "blob"
+  },
+  {
+   "mode": "100644",
+   "path": "packages/rigforge/contracts/v1/tests/test_gev_models.py",
+   "type": "blob"
+  },
+  {
+   "mode": "040000",
+   "path": "packages/rigforge/docs",
+   "type": "tree"
+  },
+  {
+   "mode": "100644",
+   "path": "packages/rigforge/docs/ARCHITECTURE.md",
+   "type": "blob"
+  },
+  {
+   "mode": "100644",
+   "path": "packages/rigforge/docs/DEPLOY.md",
+   "type": "blob"
+  },
+  {
+   "mode": "100644",
+   "path": "packages/rigforge/docs/EXTENDING.md",
+   "type": "blob"
+  },
+  {
+   "mode": "100644",
+   "path": "packages/rigforge/docs/LEADERBOARD.md",
+   "type": "blob"
+  },
+  {
+   "mode": "100644",
+   "path": "packages/rigforge/docs/THREAT_MODEL.md",
+   "type": "blob"
+  },
+  {
+   "mode": "100644",
+   "path": "packages/rigforge/docs/demo.svg",
+   "type": "blob"
+  },
+  {
+   "mode": "040000",
+   "path": "packages/rigforge/examples",
+   "type": "tree"
+  },
+  {
+   "mode": "100644",
+   "path": "packages/rigforge/examples/swarm_demo.py",
+   "type": "blob"
+  },
+  {
+   "mode": "100644",
+   "path": "packages/rigforge/examples/verify_agent_done.py",
+   "type": "blob"
+  },
+  {
+   "mode": "100644",
+   "path": "packages/rigforge/pyproject.toml",
+   "type": "blob"
+  },
+  {
+   "mode": "040000",
+   "path": "packages/rigforge/rigforge",
+   "type": "tree"
+  },
+  {
+   "mode": "100644",
+   "path": "packages/rigforge/rigforge/__init__.py",
+   "type": "blob"
+  },
+  {
+   "mode": "100644",
+   "path": "packages/rigforge/rigforge/benchmark.py",
+   "type": "blob"
+  },
+  {
+   "mode": "100644",
+   "path": "packages/rigforge/rigforge/cli.py",
+   "type": "blob"
+  },
+  {
+   "mode": "100644",
+   "path": "packages/rigforge/rigforge/cockpit.py",
+   "type": "blob"
+  },
+  {
+   "mode": "040000",
+   "path": "packages/rigforge/rigforge/commands",
+   "type": "tree"
+  },
+  {
+   "mode": "100644",
+   "path": "packages/rigforge/rigforge/commands/__init__.py",
+   "type": "blob"
+  },
+  {
+   "mode": "100644",
+   "path": "packages/rigforge/rigforge/commands/forge.py",
+   "type": "blob"
+  },
+  {
+   "mode": "100644",
+   "path": "packages/rigforge/rigforge/commands/status.py",
+   "type": "blob"
+  },
+  {
+   "mode": "100644",
+   "path": "packages/rigforge/rigforge/config.py",
+   "type": "blob"
+  },
+  {
+   "mode": "100644",
+   "path": "packages/rigforge/rigforge/context.py",
+   "type": "blob"
+  },
+  {
+   "mode": "100644",
+   "path": "packages/rigforge/rigforge/demo.py",
+   "type": "blob"
+  },
+  {
+   "mode": "100644",
+   "path": "packages/rigforge/rigforge/diff.py",
+   "type": "blob"
+  },
+  {
+   "mode": "100644",
+   "path": "packages/rigforge/rigforge/evalloop.py",
+   "type": "blob"
+  },
+  {
+   "mode": "100644",
+   "path": "packages/rigforge/rigforge/forge.py",
+   "type": "blob"
+  },
+  {
+   "mode": "100644",
+   "path": "packages/rigforge/rigforge/gaps.py",
+   "type": "blob"
+  },
+  {
+   "mode": "100644",
+   "path": "packages/rigforge/rigforge/gates.py",
+   "type": "blob"
+  },
+  {
+   "mode": "100644",
+   "path": "packages/rigforge/rigforge/goal.py",
+   "type": "blob"
+  },
+  {
+   "mode": "100644",
+   "path": "packages/rigforge/rigforge/harness.py",
+   "type": "blob"
+  },
+  {
+   "mode": "040000",
+   "path": "packages/rigforge/rigforge/intents",
+   "type": "tree"
+  },
+  {
+   "mode": "100644",
+   "path": "packages/rigforge/rigforge/intents/__init__.py",
+   "type": "blob"
+  },
+  {
+   "mode": "100644",
+   "path": "packages/rigforge/rigforge/intents/intent_parser.py",
+   "type": "blob"
+  },
+  {
+   "mode": "100644",
+   "path": "packages/rigforge/rigforge/intents/troika.py",
+   "type": "blob"
+  },
+  {
+   "mode": "040000",
+   "path": "packages/rigforge/rigforge/lattice",
+   "type": "tree"
+  },
+  {
+   "mode": "100644",
+   "path": "packages/rigforge/rigforge/lattice/__init__.py",
+   "type": "blob"
+  },
+  {
+   "mode": "100644",
+   "path": "packages/rigforge/rigforge/lattice/router.py",
+   "type": "blob"
+  },
+  {
+   "mode": "100644",
+   "path": "packages/rigforge/rigforge/leaderboard.py",
+   "type": "blob"
+  },
+  {
+   "mode": "100644",
+   "path": "packages/rigforge/rigforge/ledger.py",
+   "type": "blob"
+  },
+  {
+   "mode": "100644",
+   "path": "packages/rigforge/rigforge/mcp_server.py",
+   "type": "blob"
+  },
+  {
+   "mode": "100644",
+   "path": "packages/rigforge/rigforge/proof.py",
+   "type": "blob"
+  },
+  {
+   "mode": "100644",
+   "path": "packages/rigforge/rigforge/questions.py",
+   "type": "blob"
+  },
+  {
+   "mode": "100644",
+   "path": "packages/rigforge/rigforge/registry.py",
+   "type": "blob"
+  },
+  {
+   "mode": "100644",
+   "path": "packages/rigforge/rigforge/run_envelope.py",
+   "type": "blob"
+  },
+  {
+   "mode": "100644",
+   "path": "packages/rigforge/rigforge/spec.py",
+   "type": "blob"
+  },
+  {
+   "mode": "100644",
+   "path": "packages/rigforge/rigforge/telemetry.py",
+   "type": "blob"
+  },
+  {
+   "mode": "040000",
+   "path": "packages/rigforge/rigforge/tests",
+   "type": "tree"
+  },
+  {
+   "mode": "100644",
+   "path": "packages/rigforge/rigforge/tests/__init__.py",
+   "type": "blob"
+  },
+  {
+   "mode": "100644",
+   "path": "packages/rigforge/rigforge/tests/test_benchmark.py",
+   "type": "blob"
+  },
+  {
+   "mode": "100644",
+   "path": "packages/rigforge/rigforge/tests/test_cli.py",
+   "type": "blob"
+  },
+  {
+   "mode": "100644",
+   "path": "packages/rigforge/rigforge/tests/test_demo.py",
+   "type": "blob"
+  },
+  {
+   "mode": "100644",
+   "path": "packages/rigforge/rigforge/tests/test_diff.py",
+   "type": "blob"
+  },
+  {
+   "mode": "100644",
+   "path": "packages/rigforge/rigforge/tests/test_evalloop.py",
+   "type": "blob"
+  },
+  {
+   "mode": "100644",
+   "path": "packages/rigforge/rigforge/tests/test_examples.py",
+   "type": "blob"
+  },
+  {
+   "mode": "100644",
+   "path": "packages/rigforge/rigforge/tests/test_followups.py",
+   "type": "blob"
+  },
+  {
+   "mode": "100644",
+   "path": "packages/rigforge/rigforge/tests/test_hardening.py",
+   "type": "blob"
+  },
+  {
+   "mode": "100644",
+   "path": "packages/rigforge/rigforge/tests/test_leaderboard.py",
+   "type": "blob"
+  },
+  {
+   "mode": "100644",
+   "path": "packages/rigforge/rigforge/tests/test_mcp_server.py",
+   "type": "blob"
+  },
+  {
+   "mode": "100644",
+   "path": "packages/rigforge/rigforge/tests/test_platform.py",
+   "type": "blob"
+  },
+  {
+   "mode": "100644",
+   "path": "packages/rigforge/rigforge/tests/test_registry_and_goal.py",
+   "type": "blob"
+  },
+  {
+   "mode": "100644",
+   "path": "packages/rigforge/rigforge/tests/test_spec.py",
+   "type": "blob"
+  },
+  {
+   "mode": "100644",
+   "path": "packages/rigforge/rigforge/tests/test_verdicts.py",
+   "type": "blob"
+  },
+  {
+   "mode": "100644",
+   "path": "packages/rigforge/rigforge/tests/test_webapp.py",
+   "type": "blob"
+  },
+  {
+   "mode": "100644",
+   "path": "packages/rigforge/rigforge/triple_diamond.py",
+   "type": "blob"
+  },
+  {
+   "mode": "040000",
+   "path": "packages/rigforge/rigforge/web",
+   "type": "tree"
+  },
+  {
+   "mode": "100644",
+   "path": "packages/rigforge/rigforge/web/app.js",
+   "type": "blob"
+  },
+  {
+   "mode": "100644",
+   "path": "packages/rigforge/rigforge/web/index.html",
+   "type": "blob"
+  },
+  {
+   "mode": "100644",
+   "path": "packages/rigforge/rigforge/web/style.css",
+   "type": "blob"
+  },
+  {
+   "mode": "100644",
+   "path": "packages/rigforge/rigforge/webapp.py",
+   "type": "blob"
+  },
+  {
+   "mode": "100644",
+   "path": "rig.repos.json",
+   "type": "blob"
+  },
+  {
+   "mode": "040000",
+   "path": "scripts",
+   "type": "tree"
+  },
+  {
+   "mode": "100755",
+   "path": "scripts/smoke.sh",
+   "type": "blob"
+  },
+  {
+   "mode": "040000",
+   "path": "tests",
+   "type": "tree"
+  },
+  {
+   "mode": "040000",
+   "path": "tests/failures",
+   "type": "tree"
+  },
+  {
+   "mode": "100644",
+   "path": "tests/failures/README.md",
+   "type": "blob"
+  }
+ ],
+ "truncated": false
+}

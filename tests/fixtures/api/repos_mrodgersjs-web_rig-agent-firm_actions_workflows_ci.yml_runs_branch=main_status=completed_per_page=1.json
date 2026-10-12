@@ -1,0 +1,29 @@
+{
+ "total_count": 1,
+ "workflow_runs": [
+  {
+   "check_suite_id": 103235554355,
+   "check_suite_node_id": "CS_kwDOTvSSrc8AAAAYCVGMMw",
+   "conclusion": "success",
+   "created_at": "2026-10-11T01:39:58Z",
+   "display_title": "Merge pull request #3 from mrodgersjs-web/loop/2026-10-10-build-core",
+   "event": "push",
+   "head_branch": "main",
+   "head_sha": "0849bd6d1772662f0ee4a5a2442d1a0af633ad8b",
+   "html_url": "https://github.com/mrodgersjs-web/rig-agent-firm/actions/runs/38102588367",
+   "id": 38102588367,
+   "name": "ci",
+   "node_id": "WFR_kwLOTvSSrc8AAAAI3xdbzw",
+   "path": ".github/workflows/ci.yml",
+   "pull_requests": [],
+   "referenced_workflows": [],
+   "run_attempt": 1,
+   "run_number": 5,
+   "run_started_at": "2026-10-11T01:39:58Z",
+   "status": "completed",
+   "updated_at": "2026-10-11T01:40:16Z",
+   "url": "https://api.github.com/repos/mrodgersjs-web/rig-agent-firm/actions/runs/38102588367",
+   "workflow_id": 380913422
+  }
+ ]
+}

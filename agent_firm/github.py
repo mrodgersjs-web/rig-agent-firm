@@ -1,4 +1,9 @@
-"""Minimal GitHub REST client (stdlib only) plus a fixture-backed client for tests."""
+"""Minimal GitHub REST client (stdlib only) plus a fixture-backed client for tests.
+
+Reads are GET-only. The single write the firm performs is creating an issue
+(``post``), and that path is allow-listed: merge, review-approval, auto-merge and
+GraphQL endpoints are refused here, before any network call (see ``assert_write_allowed``).
+"""
 
 from __future__ import annotations
 
@@ -43,6 +48,24 @@ def prune(obj: Any) -> Any:
     if isinstance(obj, list):
         return [prune(v) for v in obj]
     return obj
+
+
+# The only write endpoint any role may call: create an issue on a repo.
+WRITE_ALLOWED = re.compile(r"^repos/[A-Za-z0-9_.-]+/[A-Za-z0-9_.-]+/issues$")
+# Never callable, whatever the allow-list says: merges stay with the human owner.
+WRITE_FORBIDDEN = re.compile(r"(/merge$|/merges$|/auto-merge|^graphql$|/reviews|/pulls/\d+/update-branch)")
+
+
+class WriteRefused(Exception):
+    """Raised before any network call when code tries a write outside the allow-list."""
+
+
+def assert_write_allowed(method: str, path: str) -> None:
+    path = path.strip("/").split("?", 1)[0]
+    if WRITE_FORBIDDEN.search(path):
+        raise WriteRefused(f"{method} {path}: merges and approvals stay with the human owner")
+    if method != "POST" or not WRITE_ALLOWED.match(path):
+        raise WriteRefused(f"{method} {path}: not on the write allow-list (only POST repos/<o>/<r>/issues)")
 
 
 class GitHubClient:
@@ -92,12 +115,33 @@ class GitHubClient:
             (self.record_dir / fixture_name(path)).write_text(json.dumps(prune(data), indent=1, sort_keys=True) + "\n")
         return data
 
+    def post(self, path: str, payload: dict[str, Any]) -> Any:
+        """Create an issue. Any other write is refused by ``assert_write_allowed``."""
+        assert_write_allowed("POST", path)
+        if not self.token:
+            raise ApiError(401, "writing needs GITHUB_TOKEN or GH_TOKEN with issues:write on the target repo", path)
+        headers = {
+            "Accept": "application/vnd.github+json",
+            "X-GitHub-Api-Version": "2022-11-28",
+            "User-Agent": "rig-agent-firm-improver",
+            "Authorization": f"Bearer {self.token}",
+            "Content-Type": "application/json",
+        }
+        url = self.base + "/" + path.lstrip("/")
+        req = urllib.request.Request(url, data=json.dumps(payload).encode(), headers=headers, method="POST")
+        try:
+            with urllib.request.urlopen(req, timeout=30) as resp:
+                return json.loads(resp.read().decode())
+        except urllib.error.HTTPError as exc:
+            raise ApiError(exc.code, exc.read().decode(errors="replace")[:200], path) from exc
+
 
 class FixtureClient:
     """Serves recorded responses from a directory. A missing fixture is a 404."""
 
     def __init__(self, directory: str | Path):
         self.dir = Path(directory)
+        self.posted: list[tuple[str, dict[str, Any]]] = []
 
     def get(self, path: str) -> Any:
         f = self.dir / fixture_name(path)
@@ -107,3 +151,9 @@ class FixtureClient:
         if isinstance(data, dict) and set(data) == {"__error__"}:
             raise ApiError(int(data["__error__"]), "recorded error", path)
         return data
+
+    def post(self, path: str, payload: dict[str, Any]) -> Any:
+        """Record the write instead of sending it, after the same allow-list check as the live client."""
+        assert_write_allowed("POST", path)
+        self.posted.append((path, payload))
+        return {"number": len(self.posted), "html_url": f"https://github.com/{path.split('/', 1)[1]}/{len(self.posted)}"}

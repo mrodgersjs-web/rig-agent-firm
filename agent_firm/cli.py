@@ -1,13 +1,17 @@
-"""Command line: ``agent-firm validate | heartbeat | render``."""
+"""Command line: ``agent-firm validate | heartbeat | render | improver {measure,pick,verify,record}``."""
 
 from __future__ import annotations
 
 import argparse
+import json
+import os
+import re
 import sys
 from datetime import datetime, timezone
 from pathlib import Path
 
-from .github import FixtureClient, GitHubClient
+from . import improver as imp
+from .github import ApiError, FixtureClient, GitHubClient, WriteRefused
 from .heartbeat import firm_status, parse_ts, run_heartbeat
 from .render import load_statuses, make_badge, write_outputs
 from .schema import load_specs
@@ -68,6 +72,94 @@ def cmd_render(args) -> int:
     return 0
 
 
+def _client(args):
+    if getattr(args, "fixtures", None):
+        return FixtureClient(args.fixtures)
+    if not (os.environ.get("GITHUB_TOKEN") or os.environ.get("GH_TOKEN")):
+        print("warning: no GITHUB_TOKEN/GH_TOKEN set; unauthenticated GitHub allows 60 requests/hour and hides "
+              "security settings, so the scorecard may be partial (see 'partial' in the output)", file=sys.stderr)
+    return GitHubClient(record_dir=getattr(args, "record", None))
+
+
+def _improver_spec(args):
+    try:
+        return imp.load_improver(args.agents, args.loop)
+    except imp.ImproverConfigError as exc:
+        print(f"error: {exc}", file=sys.stderr)
+        return None
+
+
+def cmd_improver_measure(args) -> int:
+    spec = _improver_spec(args)
+    if spec is None:
+        return 2
+    now = parse_ts(args.now) if args.now else None
+    repos = [r.strip() for r in args.repos.split(",") if r.strip()] if args.repos else None
+    try:
+        card = imp.measure(_client(args), spec, now=now, repos=repos)
+    except ApiError as exc:
+        print(f"error: could not list repos: {exc}", file=sys.stderr)
+        return 3
+    out = Path(args.out)
+    js = imp.write_json(out / "scorecard.json", card)
+    md = out / "scorecard.md"
+    md.write_text(imp.scorecard_markdown(card))
+    for r in card["repos"]:
+        low = imp.lowest_dimension(r, card["dimensions"])
+        lowtxt = f"{low[0]}={low[1]:g}" if low else "-"
+        print(f"{imp._fmt(r['overall']):>5}  {r['repo']:<42} lowest {lowtxt}{'  PARTIAL' if r['partial'] else ''}")
+    print(f"scored {len(card['repos'])} repos; wrote {js} and {md}")
+    if card["partial"] and not args.allow_partial:
+        print("error: some GitHub API calls failed (rate limit or 5xx); scorecard is partial", file=sys.stderr)
+        return 3
+    return 0
+
+
+def cmd_improver_pick(args) -> int:
+    spec = _improver_spec(args)
+    if spec is None:
+        return 2
+    card = json.loads(Path(args.scorecard).read_text())
+    client = _client(args) if args.open_issue else None
+    try:
+        res = imp.pick(card, spec, client=client, open_issue=args.open_issue)
+    except (imp.ImproverConfigError, WriteRefused, ApiError) as exc:
+        print(f"error: {exc}", file=sys.stderr)
+        return 2
+    out = Path(args.out)
+    js = imp.write_json(out / "picks.json", res)
+    md = out / "picks.md"
+    md.write_text(imp.picks_markdown(res))
+    for c in res["chosen"]:
+        print(f"pick  {c['repo']:<42} {c['dimension']}={c['score']:g}  -> {c['title']}")
+    for o in res["opened"]:
+        print(f"opened {o['html_url']}")
+    print(f"{len(res['chosen'])} chosen, {len(res['queued'])} queued, {len(res['skipped'])} skipped"
+          f"{' (dry run)' if res['dry_run'] else ''}; wrote {js} and {md}")
+    return 0
+
+
+def cmd_improver_verify(args) -> int:
+    m = re.match(r"^([\w.-]+/[\w.-]+)#(\d+)$", args.pr)
+    if not m:
+        print("error: PR must look like owner/repo#123", file=sys.stderr)
+        return 2
+    res = imp.verify_pr(_client(args), m.group(1), int(m.group(2)))
+    print(json.dumps(res, indent=2))
+    return 0 if res["ready_to_ship"] else 1
+
+
+def cmd_improver_record(args) -> int:
+    rc = imp.record(json.loads(Path(args.before).read_text()), json.loads(Path(args.after).read_text()))
+    out = Path(args.out)
+    js = imp.write_json(out / "receipt.json", rc)
+    md = out / "receipt.md"
+    md.write_text(imp.receipt_markdown(rc))
+    n = sum(len(r["changes"]) for r in rc["repos"])
+    print(f"{n} score changes across {len(rc['repos'])} repos; wrote {js} and {md}")
+    return 0
+
+
 def main(argv: list[str] | None = None) -> int:
     p = argparse.ArgumentParser(prog="agent-firm", description=__doc__)
     sub = p.add_subparsers(dest="cmd", required=True)
@@ -87,5 +179,32 @@ def main(argv: list[str] | None = None) -> int:
     r.add_argument("--status", default="out/status")
     r.add_argument("--out", default="out")
     r.set_defaults(fn=cmd_render)
+    im = sub.add_parser("improver", help="nightly improvement loop: measure, pick, verify, record (never merges)")
+    isub = im.add_subparsers(dest="phase", required=True)
+    common = argparse.ArgumentParser(add_help=False)
+    common.add_argument("--agents", default="agents")
+    common.add_argument("--loop", default=".rig/loop.yaml")
+    common.add_argument("--fixtures", help="read recorded API responses from this directory instead of GitHub")
+    common.add_argument("--record", help="save pruned live API responses to this directory")
+    ms = isub.add_parser("measure", parents=[common], help="score every in-scope repo; write scorecard.json/.md")
+    ms.add_argument("--out", default="out/improver")
+    ms.add_argument("--repos", default="", help="comma-separated repos to score instead of discovering by label")
+    ms.add_argument("--now", help="override the clock (ISO 8601, for fixtures)")
+    ms.add_argument("--allow-partial", action="store_true", help="exit 0 even if some API calls failed")
+    ms.set_defaults(fn=cmd_improver_measure)
+    pk = isub.add_parser("pick", parents=[common], help="lowest dimension per repo -> scoped issue drafts")
+    pk.add_argument("--scorecard", default="out/improver/scorecard.json")
+    pk.add_argument("--out", default="out/improver")
+    pk.add_argument("--open-issue", action="store_true",
+                    help="actually open the chosen issue(s) (needs a token with issues:write); default is a dry run")
+    pk.set_defaults(fn=cmd_improver_pick)
+    vf = isub.add_parser("verify", parents=[common], help="check a PR's CI and review state (read-only)")
+    vf.add_argument("pr", help="owner/repo#number")
+    vf.set_defaults(fn=cmd_improver_verify)
+    rc = isub.add_parser("record", help="before/after receipt from two scorecards")
+    rc.add_argument("--before", required=True)
+    rc.add_argument("--after", required=True)
+    rc.add_argument("--out", default="out/improver")
+    rc.set_defaults(fn=cmd_improver_record)
     args = p.parse_args(argv)
     return args.fn(args)

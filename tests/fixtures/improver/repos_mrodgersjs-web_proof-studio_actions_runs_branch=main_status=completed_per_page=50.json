@@ -1,0 +1,192 @@
+{
+ "total_count": 17,
+ "workflow_runs": [
+  {
+   "conclusion": "success",
+   "created_at": "2026-10-11T01:39:06Z",
+   "head_sha": "bfe3b50af4cd38aa161db91b2482b7655618859a",
+   "html_url": "https://github.com/mrodgersjs-web/proof-studio/actions/runs/38102541137",
+   "name": "smoke",
+   "path": ".github/workflows/smoke.yml",
+   "status": "completed",
+   "updated_at": "2026-10-11T01:39:21Z",
+   "workflow_id": 327421105
+  },
+  {
+   "conclusion": "skipped",
+   "created_at": "2026-10-11T01:39:06Z",
+   "head_sha": "bfe3b50af4cd38aa161db91b2482b7655618859a",
+   "html_url": "https://github.com/mrodgersjs-web/proof-studio/actions/runs/38102541106",
+   "name": "rig-lattice",
+   "path": ".github/workflows/rig-lattice.yml",
+   "status": "completed",
+   "updated_at": "2026-10-11T01:39:16Z",
+   "workflow_id": 356703566
+  },
+  {
+   "conclusion": "success",
+   "created_at": "2026-10-11T01:39:06Z",
+   "head_sha": "bfe3b50af4cd38aa161db91b2482b7655618859a",
+   "html_url": "https://github.com/mrodgersjs-web/proof-studio/actions/runs/38102541087",
+   "name": "ci",
+   "path": ".github/workflows/ci.yml",
+   "status": "completed",
+   "updated_at": "2026-10-11T01:39:38Z",
+   "workflow_id": 380929947
+  },
+  {
+   "conclusion": "skipped",
+   "created_at": "2026-10-10T23:34:24Z",
+   "head_sha": "f967decd41fce26a9ac34639bbe141ed1a7ee63a",
+   "html_url": "https://github.com/mrodgersjs-web/proof-studio/actions/runs/38095495189",
+   "name": "rig-lattice",
+   "path": ".github/workflows/rig-lattice.yml",
+   "status": "completed",
+   "updated_at": "2026-10-10T23:34:25Z",
+   "workflow_id": 356703566
+  },
+  {
+   "conclusion": "success",
+   "created_at": "2026-10-10T23:34:24Z",
+   "head_sha": "f967decd41fce26a9ac34639bbe141ed1a7ee63a",
+   "html_url": "https://github.com/mrodgersjs-web/proof-studio/actions/runs/38095495217",
+   "name": "smoke",
+   "path": ".github/workflows/smoke.yml",
+   "status": "completed",
+   "updated_at": "2026-10-10T23:34:37Z",
+   "workflow_id": 327421105
+  },
+  {
+   "conclusion": "success",
+   "created_at": "2026-09-12T19:23:24Z",
+   "head_sha": "01db9f5550ba4849e44b6f0683ea26706bcdd799",
+   "html_url": "https://github.com/mrodgersjs-web/proof-studio/actions/runs/34714024965",
+   "name": "smoke",
+   "path": ".github/workflows/smoke.yml",
+   "status": "completed",
+   "updated_at": "2026-09-12T19:23:42Z",
+   "workflow_id": 327421105
+  },
+  {
+   "conclusion": "failure",
+   "created_at": "2026-09-12T19:23:24Z",
+   "head_sha": "01db9f5550ba4849e44b6f0683ea26706bcdd799",
+   "html_url": "https://github.com/mrodgersjs-web/proof-studio/actions/runs/34714024947",
+   "name": "rig-lattice",
+   "path": ".github/workflows/rig-lattice.yml",
+   "status": "completed",
+   "updated_at": "2026-09-12T19:23:34Z",
+   "workflow_id": 356703566
+  },
+  {
+   "conclusion": "success",
+   "created_at": "2026-09-08T20:29:34Z",
+   "head_sha": "f69d80006ca95efec3a8e1a11513eaa30df60a94",
+   "html_url": "https://github.com/mrodgersjs-web/proof-studio/actions/runs/34275106974",
+   "name": "smoke",
+   "path": ".github/workflows/smoke.yml",
+   "status": "completed",
+   "updated_at": "2026-09-08T20:29:50Z",
+   "workflow_id": 327421105
+  },
+  {
+   "conclusion": "success",
+   "created_at": "2026-08-26T13:55:56Z",
+   "head_sha": "73ab0e49d5d02a361699a90b338c41bc460a73f0",
+   "html_url": "https://github.com/mrodgersjs-web/proof-studio/actions/runs/32977165587",
+   "name": "smoke",
+   "path": ".github/workflows/smoke.yml",
+   "status": "completed",
+   "updated_at": "2026-08-26T13:56:09Z",
+   "workflow_id": 327421105
+  },
+  {
+   "conclusion": "success",
+   "created_at": "2026-08-06T03:32:53Z",
+   "head_sha": "5b625ab24237947899e761184d32d295be893c76",
+   "html_url": "https://github.com/mrodgersjs-web/proof-studio/actions/runs/31068738373",
+   "name": "smoke",
+   "path": ".github/workflows/smoke.yml",
+   "status": "completed",
+   "updated_at": "2026-08-06T03:33:12Z",
+   "workflow_id": 327421105
+  },
+  {
+   "conclusion": "success",
+   "created_at": "2026-08-06T03:18:17Z",
+   "head_sha": "29c79655c422ea3a149cd901c9a7bd21d617e634",
+   "html_url": "https://github.com/mrodgersjs-web/proof-studio/actions/runs/31068064457",
+   "name": "smoke",
+   "path": ".github/workflows/smoke.yml",
+   "status": "completed",
+   "updated_at": "2026-08-06T03:18:36Z",
+   "workflow_id": 327421105
+  },
+  {
+   "conclusion": "success",
+   "created_at": "2026-08-06T03:17:19Z",
+   "head_sha": "2696ad7bad8e5573770388117314d7c96ddc405d",
+   "html_url": "https://github.com/mrodgersjs-web/proof-studio/actions/runs/31068020436",
+   "name": "smoke",
+   "path": ".github/workflows/smoke.yml",
+   "status": "completed",
+   "updated_at": "2026-08-06T03:17:41Z",
+   "workflow_id": 327421105
+  },
+  {
+   "conclusion": "success",
+   "created_at": "2026-08-06T02:24:58Z",
+   "head_sha": "dc7997f013a87b19287dc072814bfc1b7304e450",
+   "html_url": "https://github.com/mrodgersjs-web/proof-studio/actions/runs/31065542273",
+   "name": "smoke",
+   "path": ".github/workflows/smoke.yml",
+   "status": "completed",
+   "updated_at": "2026-08-06T02:25:21Z",
+   "workflow_id": 327421105
+  },
+  {
+   "conclusion": "success",
+   "created_at": "2026-08-06T01:42:03Z",
+   "head_sha": "a54de118c9e9505f4cde22483e200905303a001a",
+   "html_url": "https://github.com/mrodgersjs-web/proof-studio/actions/runs/31063486233",
+   "name": "smoke",
+   "path": ".github/workflows/smoke.yml",
+   "status": "completed",
+   "updated_at": "2026-08-06T01:42:19Z",
+   "workflow_id": 327421105
+  },
+  {
+   "conclusion": "success",
+   "created_at": "2026-08-06T01:42:03Z",
+   "head_sha": "1920a02e1eb90b6367d24916776ad2542ce7a32c",
+   "html_url": "https://github.com/mrodgersjs-web/proof-studio/actions/runs/31063485723",
+   "name": "smoke",
+   "path": ".github/workflows/smoke.yml",
+   "status": "completed",
+   "updated_at": "2026-08-06T01:42:17Z",
+   "workflow_id": 327421105
+  },
+  {
+   "conclusion": "success",
+   "created_at": "2026-08-05T21:57:04Z",
+   "head_sha": "7a5e1293ddd3e856ee0b1e060fc3a460e01736a8",
+   "html_url": "https://github.com/mrodgersjs-web/proof-studio/actions/runs/31050799378",
+   "name": "smoke",
+   "path": ".github/workflows/smoke.yml",
+   "status": "completed",
+   "updated_at": "2026-08-05T21:57:20Z",
+   "workflow_id": 327421105
+  },
+  {
+   "conclusion": "success",
+   "created_at": "2026-08-04T23:45:19Z",
+   "head_sha": "de4e9ebdf2ed2a2cf9aafb4d0bfc5ff58f56790f",
+   "html_url": "https://github.com/mrodgersjs-web/proof-studio/actions/runs/30961050273",
+   "name": "smoke",
+   "path": ".github/workflows/smoke.yml",
+   "status": "completed",
+   "updated_at": "2026-08-04T23:45:35Z",
+   "workflow_id": 327421105
+  }
+ ]
+}

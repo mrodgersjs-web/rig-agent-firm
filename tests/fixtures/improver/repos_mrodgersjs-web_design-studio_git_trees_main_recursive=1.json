@@ -1,0 +1,415 @@
+{
+ "tree": [
+  {
+   "mode": "040000",
+   "path": ".github",
+   "type": "tree"
+  },
+  {
+   "mode": "040000",
+   "path": ".github/workflows",
+   "type": "tree"
+  },
+  {
+   "mode": "100644",
+   "path": ".github/workflows/rig-lattice.yml",
+   "type": "blob"
+  },
+  {
+   "mode": "100644",
+   "path": ".github/workflows/smoke.yml",
+   "type": "blob"
+  },
+  {
+   "mode": "100644",
+   "path": ".gitignore",
+   "type": "blob"
+  },
+  {
+   "mode": "040000",
+   "path": ".rig",
+   "type": "tree"
+  },
+  {
+   "mode": "040000",
+   "path": ".rig/hooks",
+   "type": "tree"
+  },
+  {
+   "mode": "100755",
+   "path": ".rig/hooks/pre-tool",
+   "type": "blob"
+  },
+  {
+   "mode": "100644",
+   "path": ".rig/loop.yaml",
+   "type": "blob"
+  },
+  {
+   "mode": "100644",
+   "path": ".rig/work-routing.yaml",
+   "type": "blob"
+  },
+  {
+   "mode": "100644",
+   "path": "AGENTS.md",
+   "type": "blob"
+  },
+  {
+   "mode": "100644",
+   "path": "CONTRIBUTING.md",
+   "type": "blob"
+  },
+  {
+   "mode": "100644",
+   "path": "DESIGN-SYSTEM.md",
+   "type": "blob"
+  },
+  {
+   "mode": "100644",
+   "path": "LICENSE",
+   "type": "blob"
+  },
+  {
+   "mode": "100644",
+   "path": "MANIFEST.in",
+   "type": "blob"
+  },
+  {
+   "mode": "100644",
+   "path": "README.md",
+   "type": "blob"
+  },
+  {
+   "mode": "100644",
+   "path": "SECURITY.md",
+   "type": "blob"
+  },
+  {
+   "mode": "040000",
+   "path": "assets",
+   "type": "tree"
+  },
+  {
+   "mode": "100644",
+   "path": "assets/architecture.svg",
+   "type": "blob"
+  },
+  {
+   "mode": "100644",
+   "path": "assets/demo.gif",
+   "type": "blob"
+  },
+  {
+   "mode": "100644",
+   "path": "assets/demo.mp4",
+   "type": "blob"
+  },
+  {
+   "mode": "100644",
+   "path": "assets/design-studio-hero.png",
+   "type": "blob"
+  },
+  {
+   "mode": "040000",
+   "path": "checklists",
+   "type": "tree"
+  },
+  {
+   "mode": "100644",
+   "path": "checklists/ui-review.md",
+   "type": "blob"
+  },
+  {
+   "mode": "040000",
+   "path": "docs",
+   "type": "tree"
+  },
+  {
+   "mode": "100644",
+   "path": "docs/architecture.md",
+   "type": "blob"
+  },
+  {
+   "mode": "100644",
+   "path": "docs/evaluation-strategy.md",
+   "type": "blob"
+  },
+  {
+   "mode": "100644",
+   "path": "docs/public-boundary.md",
+   "type": "blob"
+  },
+  {
+   "mode": "100644",
+   "path": "docs/rig-design-studio-demo.gif",
+   "type": "blob"
+  },
+  {
+   "mode": "100644",
+   "path": "docs/video-script.md",
+   "type": "blob"
+  },
+  {
+   "mode": "040000",
+   "path": "mcp",
+   "type": "tree"
+  },
+  {
+   "mode": "040000",
+   "path": "mcp/fixtures",
+   "type": "tree"
+  },
+  {
+   "mode": "100644",
+   "path": "mcp/fixtures/legacy-tools.json",
+   "type": "blob"
+  },
+  {
+   "mode": "040000",
+   "path": "mcp/references",
+   "type": "tree"
+  },
+  {
+   "mode": "100644",
+   "path": "mcp/references/SECTION-CATALOG.md",
+   "type": "blob"
+  },
+  {
+   "mode": "100755",
+   "path": "mcp/server.py",
+   "type": "blob"
+  },
+  {
+   "mode": "100755",
+   "path": "mcp/test_contract.py",
+   "type": "blob"
+  },
+  {
+   "mode": "100755",
+   "path": "mcp/test_wheel.py",
+   "type": "blob"
+  },
+  {
+   "mode": "100644",
+   "path": "pyproject.toml",
+   "type": "blob"
+  },
+  {
+   "mode": "100644",
+   "path": "rig.repos.json",
+   "type": "blob"
+  },
+  {
+   "mode": "040000",
+   "path": "rigds_mcp",
+   "type": "tree"
+  },
+  {
+   "mode": "100644",
+   "path": "rigds_mcp/__init__.py",
+   "type": "blob"
+  },
+  {
+   "mode": "040000",
+   "path": "rigds_mcp/references",
+   "type": "tree"
+  },
+  {
+   "mode": "100644",
+   "path": "rigds_mcp/references/SECTION-CATALOG.md",
+   "type": "blob"
+  },
+  {
+   "mode": "100755",
+   "path": "rigds_mcp/scorecard.py",
+   "type": "blob"
+  },
+  {
+   "mode": "100755",
+   "path": "rigds_mcp/server.py",
+   "type": "blob"
+  },
+  {
+   "mode": "040000",
+   "path": "scripts",
+   "type": "tree"
+  },
+  {
+   "mode": "100755",
+   "path": "scripts/smoke.sh",
+   "type": "blob"
+  },
+  {
+   "mode": "040000",
+   "path": "skills",
+   "type": "tree"
+  },
+  {
+   "mode": "040000",
+   "path": "skills/rig-design-studio-satori-apple",
+   "type": "tree"
+  },
+  {
+   "mode": "100644",
+   "path": "skills/rig-design-studio-satori-apple/SKILL.md",
+   "type": "blob"
+  },
+  {
+   "mode": "040000",
+   "path": "skills/rig-design-studio-satori-apple/fixtures",
+   "type": "tree"
+  },
+  {
+   "mode": "100644",
+   "path": "skills/rig-design-studio-satori-apple/fixtures/fail-empty.json",
+   "type": "blob"
+  },
+  {
+   "mode": "100644",
+   "path": "skills/rig-design-studio-satori-apple/fixtures/fail-gate.json",
+   "type": "blob"
+  },
+  {
+   "mode": "100644",
+   "path": "skills/rig-design-studio-satori-apple/fixtures/fail-impl.json",
+   "type": "blob"
+  },
+  {
+   "mode": "100644",
+   "path": "skills/rig-design-studio-satori-apple/fixtures/fail-omit-gate.json",
+   "type": "blob"
+  },
+  {
+   "mode": "100644",
+   "path": "skills/rig-design-studio-satori-apple/fixtures/fail-omit.json",
+   "type": "blob"
+  },
+  {
+   "mode": "100644",
+   "path": "skills/rig-design-studio-satori-apple/fixtures/fail-unknown.json",
+   "type": "blob"
+  },
+  {
+   "mode": "100644",
+   "path": "skills/rig-design-studio-satori-apple/fixtures/pass.json",
+   "type": "blob"
+  },
+  {
+   "mode": "040000",
+   "path": "skills/rig-design-studio-satori-apple/fixtures/proof",
+   "type": "tree"
+  },
+  {
+   "mode": "100644",
+   "path": "skills/rig-design-studio-satori-apple/fixtures/proof/a11y.md",
+   "type": "blob"
+  },
+  {
+   "mode": "100644",
+   "path": "skills/rig-design-studio-satori-apple/fixtures/proof/artifact.html",
+   "type": "blob"
+  },
+  {
+   "mode": "100644",
+   "path": "skills/rig-design-studio-satori-apple/fixtures/proof/ledger.md",
+   "type": "blob"
+  },
+  {
+   "mode": "100644",
+   "path": "skills/rig-design-studio-satori-apple/fixtures/proof/risks.md",
+   "type": "blob"
+  },
+  {
+   "mode": "100644",
+   "path": "skills/rig-design-studio-satori-apple/fixtures/proof/shot-1440.png",
+   "type": "blob"
+  },
+  {
+   "mode": "100755",
+   "path": "skills/rig-design-studio-satori-apple/install.sh",
+   "type": "blob"
+  },
+  {
+   "mode": "040000",
+   "path": "skills/rig-design-studio-satori-apple/references",
+   "type": "tree"
+  },
+  {
+   "mode": "100644",
+   "path": "skills/rig-design-studio-satori-apple/references/criteria.md",
+   "type": "blob"
+  },
+  {
+   "mode": "100644",
+   "path": "skills/rig-design-studio-satori-apple/references/evidence-ledger-v0.1.md",
+   "type": "blob"
+  },
+  {
+   "mode": "100644",
+   "path": "skills/rig-design-studio-satori-apple/references/release-rule.md",
+   "type": "blob"
+  },
+  {
+   "mode": "100644",
+   "path": "skills/rig-design-studio-satori-apple/references/seed-v0.1.md",
+   "type": "blob"
+  },
+  {
+   "mode": "040000",
+   "path": "skills/rig-design-studio-satori-apple/scripts",
+   "type": "tree"
+  },
+  {
+   "mode": "100755",
+   "path": "skills/rig-design-studio-satori-apple/scripts/check_attribution.py",
+   "type": "blob"
+  },
+  {
+   "mode": "100755",
+   "path": "skills/rig-design-studio-satori-apple/scripts/scorecard.py",
+   "type": "blob"
+  },
+  {
+   "mode": "040000",
+   "path": "skills/rig-design-studio-satori-apple/templates",
+   "type": "tree"
+  },
+  {
+   "mode": "100644",
+   "path": "skills/rig-design-studio-satori-apple/templates/scorecard.json",
+   "type": "blob"
+  },
+  {
+   "mode": "040000",
+   "path": "skills/rig-design-studio-satori-apple/workflows",
+   "type": "tree"
+  },
+  {
+   "mode": "100644",
+   "path": "skills/rig-design-studio-satori-apple/workflows/corpus.md",
+   "type": "blob"
+  },
+  {
+   "mode": "100644",
+   "path": "skills/rig-design-studio-satori-apple/workflows/critique.md",
+   "type": "blob"
+  },
+  {
+   "mode": "100644",
+   "path": "skills/rig-design-studio-satori-apple/workflows/design.md",
+   "type": "blob"
+  },
+  {
+   "mode": "040000",
+   "path": "tokens",
+   "type": "tree"
+  },
+  {
+   "mode": "100644",
+   "path": "tokens/base.json",
+   "type": "blob"
+  }
+ ],
+ "truncated": false
+}

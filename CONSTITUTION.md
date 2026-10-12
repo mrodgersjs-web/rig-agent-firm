@@ -21,6 +21,7 @@ governed.
 | Builder | [rigforge](https://github.com/mrodgersjs-web/rigforge) | Scaffold deterministic builds | Build automation only; keys stay in CI secrets |
 | Strategist | [fde-portfolio](https://github.com/mrodgersjs-web/fde-portfolio) | Discovery, eval, handoff | Produces briefs; no client execution without contract |
 | Governor | [doctrine](https://github.com/mrodgersjs-web/doctrine) | Versioned guardrails | Read-only at runtime; changes require human approval |
+| Improver | [rig-agent-firm](https://github.com/mrodgersjs-web/rig-agent-firm) | Nightly measure → pick → PR loop for studio/foundry/capability repos | Opens issues and PRs only; merges stay with the human owner |
 
 ## Agent spec format
 
@@ -40,6 +41,9 @@ Every agent is declared in `agents/<dept>.yaml` and checked by `agent-firm valid
 - `checks` — list of machine checks (`file_exists`, `workflow_success`, `release_exists`, `commit_within`) the engine runs
 - `claim` — the public claim the invariant defends
 - `owner`, `status_branch`, `queue_depth_metric`, `last_action_metric`
+- `improver` — only on the Improver: `cadence`, `cron`, `phases` (fixed order), `scope`,
+  `scorecard` dimensions, `pick`, and `merge_policy: human_only` + `auto_merge: false`
+  (any other value is rejected by the validator)
 
 ## Heartbeat
 

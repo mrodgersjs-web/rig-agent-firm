@@ -29,3 +29,19 @@ enforcement:
   wide_edits: scout-worker-synthesizer required (files > 5)
   fuzzy_fixes: tac stochastic coverage (n >= 2 frames)
   results_standard: 1000x round via capabilities_round per lane; MCP tools return verified results only
+automations:
+  # Routing declarations for automations in this repo (owner from the table above).
+  - name: improver-measure-pick
+    entry: agent-firm improver measure | pick
+    workflow: .github/workflows/improver.yml
+    work_type: pure_collection_counting_hashing_validation_routing
+    owner: plain_python
+  - name: improver-open-issue
+    entry: agent-firm improver pick --open-issue
+    work_type: approval_permissions_budgets_retries_idempotency
+    owner: deterministic_code
+    note: allow-listed to POST repos/<o>/<r>/issues only; merge, review and auto-merge endpoints refused in code
+  - name: improver-merge
+    work_type: public_posting_email_payments_destructive_effects
+    owner: human_owner
+    note: never automated; the Improver opens PRs and the human owner merges

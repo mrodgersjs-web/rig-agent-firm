@@ -1,0 +1,515 @@
+{
+ "tree": [
+  {
+   "mode": "040000",
+   "path": ".github",
+   "type": "tree"
+  },
+  {
+   "mode": "040000",
+   "path": ".github/workflows",
+   "type": "tree"
+  },
+  {
+   "mode": "100644",
+   "path": ".github/workflows/ci.yml",
+   "type": "blob"
+  },
+  {
+   "mode": "100644",
+   "path": ".github/workflows/rig-lattice.yml",
+   "type": "blob"
+  },
+  {
+   "mode": "100644",
+   "path": ".github/workflows/smoke.yml",
+   "type": "blob"
+  },
+  {
+   "mode": "100644",
+   "path": ".gitignore",
+   "type": "blob"
+  },
+  {
+   "mode": "040000",
+   "path": ".rig",
+   "type": "tree"
+  },
+  {
+   "mode": "040000",
+   "path": ".rig/hooks",
+   "type": "tree"
+  },
+  {
+   "mode": "100755",
+   "path": ".rig/hooks/pre-tool",
+   "type": "blob"
+  },
+  {
+   "mode": "100644",
+   "path": ".rig/loop.yaml",
+   "type": "blob"
+  },
+  {
+   "mode": "100644",
+   "path": ".rig/work-routing.yaml",
+   "type": "blob"
+  },
+  {
+   "mode": "100644",
+   "path": "AGENTS.md",
+   "type": "blob"
+  },
+  {
+   "mode": "100644",
+   "path": "CONTRIBUTING.md",
+   "type": "blob"
+  },
+  {
+   "mode": "100644",
+   "path": "LICENSE",
+   "type": "blob"
+  },
+  {
+   "mode": "100644",
+   "path": "README.md",
+   "type": "blob"
+  },
+  {
+   "mode": "100644",
+   "path": "SECURITY.md",
+   "type": "blob"
+  },
+  {
+   "mode": "040000",
+   "path": "agentforge",
+   "type": "tree"
+  },
+  {
+   "mode": "100644",
+   "path": "agentforge/comm-pipeline.workflow",
+   "type": "blob"
+  },
+  {
+   "mode": "100644",
+   "path": "agentforge/single-message-guard.workflow",
+   "type": "blob"
+  },
+  {
+   "mode": "040000",
+   "path": "assets",
+   "type": "tree"
+  },
+  {
+   "mode": "100644",
+   "path": "assets/architecture.svg",
+   "type": "blob"
+  },
+  {
+   "mode": "100644",
+   "path": "assets/communications-studio-hero.png",
+   "type": "blob"
+  },
+  {
+   "mode": "100644",
+   "path": "assets/demo.gif",
+   "type": "blob"
+  },
+  {
+   "mode": "100644",
+   "path": "assets/demo.mp4",
+   "type": "blob"
+  },
+  {
+   "mode": "040000",
+   "path": "docs",
+   "type": "tree"
+  },
+  {
+   "mode": "100644",
+   "path": "docs/AGENTFORGE.md",
+   "type": "blob"
+  },
+  {
+   "mode": "100644",
+   "path": "docs/BEHAVIORAL_REPOS.md",
+   "type": "blob"
+  },
+  {
+   "mode": "100644",
+   "path": "docs/CHANNELS.md",
+   "type": "blob"
+  },
+  {
+   "mode": "100644",
+   "path": "docs/CONSENSUS_RESEARCH.md",
+   "type": "blob"
+  },
+  {
+   "mode": "100644",
+   "path": "docs/DEVIATION_QUESTIONS.md",
+   "type": "blob"
+  },
+  {
+   "mode": "100644",
+   "path": "docs/DOCTRINE.md",
+   "type": "blob"
+  },
+  {
+   "mode": "100644",
+   "path": "docs/FORMULAS.md",
+   "type": "blob"
+  },
+  {
+   "mode": "100644",
+   "path": "docs/GATES.md",
+   "type": "blob"
+  },
+  {
+   "mode": "100644",
+   "path": "docs/IDP_FORMULA.md",
+   "type": "blob"
+  },
+  {
+   "mode": "100644",
+   "path": "docs/INTEGRATION.md",
+   "type": "blob"
+  },
+  {
+   "mode": "100644",
+   "path": "docs/LONG_TERM.md",
+   "type": "blob"
+  },
+  {
+   "mode": "100644",
+   "path": "docs/NEAR_TERM.md",
+   "type": "blob"
+  },
+  {
+   "mode": "100644",
+   "path": "docs/PROTOCOL.md",
+   "type": "blob"
+  },
+  {
+   "mode": "100644",
+   "path": "docs/SIGNAL_DETECTION.md",
+   "type": "blob"
+  },
+  {
+   "mode": "100644",
+   "path": "docs/SKILL.md",
+   "type": "blob"
+  },
+  {
+   "mode": "100644",
+   "path": "docs/SUMMARY.md",
+   "type": "blob"
+  },
+  {
+   "mode": "100644",
+   "path": "docs/TOURNAMENT.md",
+   "type": "blob"
+  },
+  {
+   "mode": "100644",
+   "path": "docs/architecture.md",
+   "type": "blob"
+  },
+  {
+   "mode": "100644",
+   "path": "docs/evaluation-strategy.md",
+   "type": "blob"
+  },
+  {
+   "mode": "100644",
+   "path": "docs/public-boundary.md",
+   "type": "blob"
+  },
+  {
+   "mode": "100644",
+   "path": "docs/video-script.md",
+   "type": "blob"
+  },
+  {
+   "mode": "040000",
+   "path": "mcp",
+   "type": "tree"
+  },
+  {
+   "mode": "100755",
+   "path": "mcp/server.py",
+   "type": "blob"
+  },
+  {
+   "mode": "100644",
+   "path": "pyproject.toml",
+   "type": "blob"
+  },
+  {
+   "mode": "040000",
+   "path": "references",
+   "type": "tree"
+  },
+  {
+   "mode": "100644",
+   "path": "references/consensus-research-mapping.md",
+   "type": "blob"
+  },
+  {
+   "mode": "100644",
+   "path": "references/deviation-questions.md",
+   "type": "blob"
+  },
+  {
+   "mode": "100644",
+   "path": "references/idp-formula-card.md",
+   "type": "blob"
+  },
+  {
+   "mode": "100644",
+   "path": "references/signal-detection-repos.md",
+   "type": "blob"
+  },
+  {
+   "mode": "100644",
+   "path": "references/tournament-architecture.md",
+   "type": "blob"
+  },
+  {
+   "mode": "100644",
+   "path": "rig.repos.json",
+   "type": "blob"
+  },
+  {
+   "mode": "040000",
+   "path": "rig_comm",
+   "type": "tree"
+  },
+  {
+   "mode": "100644",
+   "path": "rig_comm/__init__.py",
+   "type": "blob"
+  },
+  {
+   "mode": "040000",
+   "path": "rig_comm/agentforge",
+   "type": "tree"
+  },
+  {
+   "mode": "100644",
+   "path": "rig_comm/agentforge/__init__.py",
+   "type": "blob"
+  },
+  {
+   "mode": "100644",
+   "path": "rig_comm/agentforge/runner.py",
+   "type": "blob"
+  },
+  {
+   "mode": "100644",
+   "path": "rig_comm/cli.py",
+   "type": "blob"
+  },
+  {
+   "mode": "100644",
+   "path": "rig_comm/core.py",
+   "type": "blob"
+  },
+  {
+   "mode": "100644",
+   "path": "rig_comm/doctrine.py",
+   "type": "blob"
+  },
+  {
+   "mode": "100644",
+   "path": "rig_comm/formulas.py",
+   "type": "blob"
+  },
+  {
+   "mode": "100644",
+   "path": "rig_comm/gates.py",
+   "type": "blob"
+  },
+  {
+   "mode": "040000",
+   "path": "rig_comm/integrations",
+   "type": "tree"
+  },
+  {
+   "mode": "100644",
+   "path": "rig_comm/integrations/__init__.py",
+   "type": "blob"
+  },
+  {
+   "mode": "100644",
+   "path": "rig_comm/integrations/autogen.py",
+   "type": "blob"
+  },
+  {
+   "mode": "100644",
+   "path": "rig_comm/integrations/crewai.py",
+   "type": "blob"
+  },
+  {
+   "mode": "100644",
+   "path": "rig_comm/integrations/guard.py",
+   "type": "blob"
+  },
+  {
+   "mode": "100644",
+   "path": "rig_comm/integrations/langgraph.py",
+   "type": "blob"
+  },
+  {
+   "mode": "100644",
+   "path": "rig_comm/integrations/mcp.py",
+   "type": "blob"
+  },
+  {
+   "mode": "100644",
+   "path": "rig_comm/integrations/openai_style.py",
+   "type": "blob"
+  },
+  {
+   "mode": "100644",
+   "path": "rig_comm/prompt.py",
+   "type": "blob"
+  },
+  {
+   "mode": "100644",
+   "path": "rig_comm/scoring.py",
+   "type": "blob"
+  },
+  {
+   "mode": "100644",
+   "path": "rig_comm/swarm.py",
+   "type": "blob"
+  },
+  {
+   "mode": "100644",
+   "path": "rig_comm/tournament.py",
+   "type": "blob"
+  },
+  {
+   "mode": "040000",
+   "path": "scores",
+   "type": "tree"
+  },
+  {
+   "mode": "100644",
+   "path": "scores/examples.json",
+   "type": "blob"
+  },
+  {
+   "mode": "040000",
+   "path": "scripts",
+   "type": "tree"
+  },
+  {
+   "mode": "100755",
+   "path": "scripts/smoke.sh",
+   "type": "blob"
+  },
+  {
+   "mode": "040000",
+   "path": "src",
+   "type": "tree"
+  },
+  {
+   "mode": "100644",
+   "path": "src/cli.py",
+   "type": "blob"
+  },
+  {
+   "mode": "100644",
+   "path": "src/formulas.py",
+   "type": "blob"
+  },
+  {
+   "mode": "100644",
+   "path": "src/gates.py",
+   "type": "blob"
+  },
+  {
+   "mode": "100644",
+   "path": "src/scoring.py",
+   "type": "blob"
+  },
+  {
+   "mode": "100644",
+   "path": "src/swarm.py",
+   "type": "blob"
+  },
+  {
+   "mode": "100644",
+   "path": "src/tournament.py",
+   "type": "blob"
+  },
+  {
+   "mode": "040000",
+   "path": "templates",
+   "type": "tree"
+  },
+  {
+   "mode": "100644",
+   "path": "templates/cold-email.md",
+   "type": "blob"
+  },
+  {
+   "mode": "100644",
+   "path": "templates/follow-up.md",
+   "type": "blob"
+  },
+  {
+   "mode": "100644",
+   "path": "templates/internal.md",
+   "type": "blob"
+  },
+  {
+   "mode": "100644",
+   "path": "templates/linkedin-comment.md",
+   "type": "blob"
+  },
+  {
+   "mode": "100644",
+   "path": "templates/linkedin-post.md",
+   "type": "blob"
+  },
+  {
+   "mode": "100644",
+   "path": "templates/proposal.md",
+   "type": "blob"
+  },
+  {
+   "mode": "100644",
+   "path": "templates/reply.md",
+   "type": "blob"
+  },
+  {
+   "mode": "040000",
+   "path": "tests",
+   "type": "tree"
+  },
+  {
+   "mode": "100644",
+   "path": "tests/test_v11_cli_and_agentforge.py",
+   "type": "blob"
+  },
+  {
+   "mode": "100644",
+   "path": "tests/test_v11_core.py",
+   "type": "blob"
+  },
+  {
+   "mode": "040000",
+   "path": "website",
+   "type": "tree"
+  },
+  {
+   "mode": "100644",
+   "path": "website/index.html",
+   "type": "blob"
+  }
+ ],
+ "truncated": false
+}

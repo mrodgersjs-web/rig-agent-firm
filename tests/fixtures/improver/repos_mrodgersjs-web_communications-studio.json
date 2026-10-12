@@ -1,0 +1,48 @@
+{
+ "archived": false,
+ "default_branch": "main",
+ "description": "Gated communications protocol engine with scored formulas \u2014 AI-driven messaging with approval gates and compliance checking.",
+ "fork": false,
+ "full_name": "mrodgersjs-web/communications-studio",
+ "has_issues": true,
+ "html_url": "https://github.com/mrodgersjs-web/communications-studio",
+ "license": {
+  "key": "mit",
+  "name": "MIT License",
+  "node_id": "MDc6TGljZW5zZTEz",
+  "spdx_id": "MIT",
+  "url": "https://api.github.com/licenses/mit"
+ },
+ "name": "communications-studio",
+ "private": false,
+ "security_and_analysis": {
+  "dependabot_security_updates": {
+   "status": "disabled"
+  },
+  "secret_scanning": {
+   "status": "enabled"
+  },
+  "secret_scanning_non_provider_patterns": {
+   "status": "disabled"
+  },
+  "secret_scanning_push_protection": {
+   "status": "enabled"
+  },
+  "secret_scanning_validity_checks": {
+   "status": "disabled"
+  }
+ },
+ "topics": [
+  "agent-governance",
+  "ai-agents",
+  "evals",
+  "forward-deployed-engineer",
+  "llm",
+  "messaging",
+  "mlops",
+  "proof-gates",
+  "python",
+  "scoring-engine"
+ ],
+ "visibility": "public"
+}

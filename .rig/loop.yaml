@@ -5,3 +5,13 @@ floor: 0.80
 supabase:
   schema: rig_shared
   events: agent_events
+roles:
+  # Seventh role. agent-firm reads this block and refuses to run the Improver unless it
+  # matches agents/improver.yaml and keeps merges human-only.
+  improver:
+    spec: agents/improver.yaml
+    cadence: nightly
+    workflow: .github/workflows/improver.yml
+    phases: [measure, pick, build, verify, ship, record]
+    merge: human_only
+    auto_merge: false

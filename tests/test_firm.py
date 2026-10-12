@@ -14,7 +14,7 @@ from agent_firm.schema import load_specs, validate_spec
 
 ROOT = Path(__file__).resolve().parents[1]
 FIX = ROOT / "tests" / "fixtures" / "api"
-NOW = parse_ts("2026-10-11T00:24:34Z")  # moment the fixtures were recorded
+NOW = parse_ts("2026-10-12T15:11:22Z")  # moment the newest fixtures (rig-agent-firm, improver) were recorded
 
 
 @pytest.fixture
@@ -31,8 +31,10 @@ def valid_spec():
 # ---------- schema ----------
 
 def test_repo_specs_all_valid(specs):
-    assert set(specs) == {"proof-studio", "jake-studio", "mesh-studio", "rigforge", "fde-portfolio", "doctrine"}
-    assert {s.name for s in specs.values()} == {"verifier", "operator", "fleet", "builder", "strategist", "governor"}
+    assert set(specs) == {"proof-studio", "jake-studio", "mesh-studio", "rigforge", "fde-portfolio", "doctrine",
+                          "rig-agent-firm"}
+    assert {s.name for s in specs.values()} == {"verifier", "operator", "fleet", "builder", "strategist", "governor",
+                                                "improver"}
 
 
 def test_validator_rejects_bad_specs():
@@ -152,14 +154,14 @@ def test_firm_status_rules():
 
 def test_heartbeat_writes_status_badge_dashboard(tmp_path, specs):
     docs = run_heartbeat(FixtureClient(FIX), list(specs.values()), tmp_path, now=NOW)
-    assert len(docs) == 6
+    assert len(docs) == 7
     files = sorted(p.name for p in (tmp_path / "status").glob("*.json"))
     assert files == sorted(f"{d}.json" for d in specs)
     for f in (tmp_path / "status").glob("*.json"):
         d = json.loads(f.read_text())
-        assert d["schema_version"] == 2 and d["checked_at"] == "2026-10-11T00:24:34Z"
+        assert d["schema_version"] == 2 and d["checked_at"] == "2026-10-12T15:11:22Z"
     badge = make_badge([json.loads(f.read_text()) for f in (tmp_path / "status").glob("*.json")])
-    assert badge == {"schemaVersion": 1, "label": "agent firm", "message": "4/6 online", "color": "red"}
+    assert badge == {"schemaVersion": 1, "label": "agent firm", "message": "5/7 online", "color": "red"}
 
 
 def test_dashboard_is_valid_svg_and_escapes(specs):
@@ -169,24 +171,24 @@ def test_dashboard_is_valid_svg_and_escapes(specs):
     root = ET.fromstring(svg)
     assert root.tag.endswith("svg")
     assert "<script>" not in svg
-    assert svg.count("<g transform") == 6
-    assert "4/6 online" in svg
+    assert svg.count("<g transform") == 7
+    assert "5/7 online" in svg
 
 
 def test_cli_end_to_end(tmp_path, capsys):
     assert main(["validate", "--agents", str(ROOT / "agents")]) == 0
     rc = main(["heartbeat", "--agents", str(ROOT / "agents"), "--fixtures", str(FIX), "--out", str(tmp_path),
-               "--now", "2026-10-11T00:24:34Z"])
+               "--now", "2026-10-12T15:11:22Z"])
     assert rc == 0
     out = capsys.readouterr().out
-    assert "firm: offline (4/6 online)" in out
+    assert "firm: offline (5/7 online)" in out
     assert (tmp_path / "badge.json").exists() and (tmp_path / "dashboard.svg").exists()
     assert main(["heartbeat", "--agents", str(ROOT / "agents"), "--fixtures", str(FIX), "--out", str(tmp_path),
-                 "--now", "2026-10-11T00:24:34Z", "--fail-on-offline"]) == 1
+                 "--now", "2026-10-12T15:11:22Z", "--fail-on-offline"]) == 1
     # --only keeps other agents' earlier status files in the rendered outputs
     main(["heartbeat", "--agents", str(ROOT / "agents"), "--fixtures", str(FIX), "--out", str(tmp_path),
-          "--now", "2026-10-11T00:24:34Z", "--only", "proof-studio"])
-    assert json.loads((tmp_path / "badge.json").read_text())["message"] == "4/6 online"
+          "--now", "2026-10-12T15:11:22Z", "--only", "proof-studio"])
+    assert json.loads((tmp_path / "badge.json").read_text())["message"] == "5/7 online"
 
 
 def test_cli_rejects_bad_specs(tmp_path):

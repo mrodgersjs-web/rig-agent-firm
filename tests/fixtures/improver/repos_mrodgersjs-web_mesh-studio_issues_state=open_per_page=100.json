@@ -1,0 +1,14 @@
+[
+ {
+  "created_at": "2026-10-11T06:55:12Z",
+  "html_url": "https://github.com/mrodgersjs-web/mesh-studio/pull/3",
+  "labels": [],
+  "number": 3,
+  "pull_request": {
+   "html_url": "https://github.com/mrodgersjs-web/mesh-studio/pull/3",
+   "merged_at": null,
+   "url": "https://api.github.com/repos/mrodgersjs-web/mesh-studio/pulls/3"
+  },
+  "title": "Return JSON for CLI parse errors"
+ }
+]

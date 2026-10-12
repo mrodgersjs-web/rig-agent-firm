@@ -1,0 +1,15 @@
+{
+ "sha": "61d74540036e39d44a48601e59654664c2620652",
+ "tree": [
+  {
+   "mode": "100755",
+   "path": "smoke.sh",
+   "sha": "5fee7ed6ee3480076eddb7172455c737efd7786f",
+   "size": 1118,
+   "type": "blob",
+   "url": "https://api.github.com/repos/mrodgersjs-web/rig-agent-firm/git/blobs/5fee7ed6ee3480076eddb7172455c737efd7786f"
+  }
+ ],
+ "truncated": false,
+ "url": "https://api.github.com/repos/mrodgersjs-web/rig-agent-firm/git/trees/61d74540036e39d44a48601e59654664c2620652"
+}
