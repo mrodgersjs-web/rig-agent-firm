@@ -1,6 +1,6 @@
 {
   "agent": "verifier",
-  "checked_at": "2026-10-12T07:06:56Z",
+  "checked_at": "2026-10-12T17:35:42Z",
   "checks": [
     {
       "detail": "scripts/smoke.sh exists on main and is executable",
@@ -15,7 +15,7 @@
       "url": "https://github.com/mrodgersjs-web/proof-studio/blob/main/scripts/smoke.sh"
     },
     {
-      "detail": "latest smoke.yml run on main succeeded 29.5h ago (limit 168h)",
+      "detail": "latest smoke.yml run on main succeeded 39.9h ago (limit 168h)",
       "ok": true,
       "params": {
         "workflow": "smoke.yml"
@@ -29,7 +29,7 @@
   "default_branch": "main",
   "evidence_at": "2026-10-11T01:39:21Z",
   "invariant": "scripts/smoke.sh is executable on the default branch and the latest smoke.yml run on it succeeded inside the SLA window",
-  "invariant_result": "ok: scripts/smoke.sh exists on main and is executable; ok: latest smoke.yml run on main succeeded 29.5h ago (limit 168h)",
+  "invariant_result": "ok: scripts/smoke.sh exists on main and is executable; ok: latest smoke.yml run on main succeeded 39.9h ago (limit 168h)",
   "owner": "mrodgersjs-web",
   "repo": "proof-studio",
   "role": "Seal and verify completion claims. A forged BUILD COMPLETE must fail the HMAC signature check. No proof, no done.",
