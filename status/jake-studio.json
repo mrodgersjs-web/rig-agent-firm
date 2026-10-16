@@ -1,6 +1,6 @@
 {
   "agent": "operator",
-  "checked_at": "2026-10-15T23:36:06Z",
+  "checked_at": "2026-10-16T03:55:19Z",
   "checks": [
     {
       "detail": "scripts/smoke.sh exists on main and is executable",
@@ -15,7 +15,7 @@
       "url": "https://github.com/mrodgersjs-web/jake-studio/blob/main/scripts/smoke.sh"
     },
     {
-      "detail": "latest smoke.yml run on main succeeded 117.9h ago (limit 168h)",
+      "detail": "latest smoke.yml run on main succeeded 122.2h ago (limit 168h)",
       "ok": true,
       "params": {
         "workflow": "smoke.yml"
@@ -38,7 +38,7 @@
   "default_branch": "main",
   "evidence_at": "2026-10-11T01:40:34Z",
   "invariant": "scripts/smoke.sh is executable on the default branch and the latest smoke.yml run on it succeeded inside the SLA window; a release is published",
-  "invariant_result": "ok: scripts/smoke.sh exists on main and is executable; ok: latest smoke.yml run on main succeeded 117.9h ago (limit 168h); ok: latest release v0.1.0 published 2026-10-11T00:19:12Z",
+  "invariant_result": "ok: scripts/smoke.sh exists on main and is executable; ok: latest smoke.yml run on main succeeded 122.2h ago (limit 168h); ok: latest release v0.1.0 published 2026-10-11T00:19:12Z",
   "owner": "mrodgersjs-web",
   "repo": "jake-studio",
   "role": "Execute plans through a builder-verifier closed loop. Owns the handoff artifact and escalates when confidence drops below the governance threshold.",
