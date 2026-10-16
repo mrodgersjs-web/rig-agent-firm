@@ -2,7 +2,7 @@
 <style>text{font-family:-apple-system,Segoe UI,Helvetica,Arial,sans-serif;fill:#c9d1d9}.t{font-size:28px;font-weight:700;fill:#f0f6fc}.s{font-size:14px;fill:#8b949e}.r{font-size:16px;font-weight:600;fill:#f0f6fc}.k{font-size:12px;fill:#58a6ff}.c{font-size:12px}.m{font-size:11px;fill:#8b949e}</style>
 <rect width="1200" height="730" fill="#0d1117"/>
 <text class="t" x="60" y="55">AGENT FIRM</text>
-<text class="s" x="60" y="85">4/6 online · firm status: offline · last check 2026-10-16T17:53:37Z</text>
+<text class="s" x="60" y="85">4/6 online · firm status: offline · last check 2026-10-16T20:44:36Z</text>
 <g transform="translate(60,130)">
 <rect width="340" height="250" rx="8" fill="#161b22" stroke="#30363d"/>
 <rect width="8" height="250" rx="4" fill="#da3633"/>
@@ -10,9 +10,9 @@
 <text class="k" x="24" y="54">GOVERNOR</text>
 <text class="r" x="316" y="34" text-anchor="end" fill="#da3633" style="fill:#da3633">OFFLINE</text>
 <text class="c" x="24" y="84">✓ scripts/smoke.sh exists on main and is executable</text>
-<text class="c" x="24" y="112">✗ latest smoke.yml run succeeded but is 907h old (l…</text>
+<text class="c" x="24" y="112">✗ latest smoke.yml run succeeded but is 910h old (l…</text>
 <text class="m" x="24" y="222">evidence: ddb865f 2026-09-08T22:25:49Z</text>
-<text class="m" x="24" y="238">checked 2026-10-16T17:53:37Z</text>
+<text class="m" x="24" y="238">checked 2026-10-16T20:44:36Z</text>
 </g>
 <g transform="translate(430,130)">
 <rect width="340" height="250" rx="8" fill="#161b22" stroke="#30363d"/>
@@ -21,9 +21,9 @@
 <text class="k" x="24" y="54">STRATEGIST</text>
 <text class="r" x="316" y="34" text-anchor="end" fill="#238636" style="fill:#238636">ONLINE</text>
 <text class="c" x="24" y="84">✓ scripts/smoke.sh exists on main and is executable</text>
-<text class="c" x="24" y="112">✓ latest smoke.yml run on main succeeded 138.3h ago…</text>
+<text class="c" x="24" y="112">✓ latest smoke.yml run on main succeeded 141.1h ago…</text>
 <text class="m" x="24" y="222">evidence: 3dba090 2026-10-10T23:36:06Z</text>
-<text class="m" x="24" y="238">checked 2026-10-16T17:53:37Z</text>
+<text class="m" x="24" y="238">checked 2026-10-16T20:44:36Z</text>
 </g>
 <g transform="translate(800,130)">
 <rect width="340" height="250" rx="8" fill="#161b22" stroke="#30363d"/>
@@ -32,10 +32,10 @@
 <text class="k" x="24" y="54">OPERATOR</text>
 <text class="r" x="316" y="34" text-anchor="end" fill="#238636" style="fill:#238636">ONLINE</text>
 <text class="c" x="24" y="84">✓ scripts/smoke.sh exists on main and is executable</text>
-<text class="c" x="24" y="112">✓ latest smoke.yml run on main succeeded 136.2h ago…</text>
+<text class="c" x="24" y="112">✓ latest smoke.yml run on main succeeded 139.1h ago…</text>
 <text class="c" x="24" y="140">✓ latest release v0.1.0 published 2026-10-11T00:19:…</text>
 <text class="m" x="24" y="222">evidence: 65f4c4b 2026-10-11T01:40:34Z</text>
-<text class="m" x="24" y="238">checked 2026-10-16T17:53:37Z</text>
+<text class="m" x="24" y="238">checked 2026-10-16T20:44:36Z</text>
 </g>
 <g transform="translate(60,410)">
 <rect width="340" height="250" rx="8" fill="#161b22" stroke="#30363d"/>
@@ -44,9 +44,9 @@
 <text class="k" x="24" y="54">FLEET</text>
 <text class="r" x="316" y="34" text-anchor="end" fill="#238636" style="fill:#238636">ONLINE</text>
 <text class="c" x="24" y="84">✓ scripts/smoke.sh exists on main and is executable</text>
-<text class="c" x="24" y="112">✓ latest smoke.yml run on main succeeded 136.2h ago…</text>
+<text class="c" x="24" y="112">✓ latest smoke.yml run on main succeeded 139.1h ago…</text>
 <text class="m" x="24" y="222">evidence: 2481cb5 2026-10-11T01:39:09Z</text>
-<text class="m" x="24" y="238">checked 2026-10-16T17:53:37Z</text>
+<text class="m" x="24" y="238">checked 2026-10-16T20:44:36Z</text>
 </g>
 <g transform="translate(430,410)">
 <rect width="340" height="250" rx="8" fill="#161b22" stroke="#30363d"/>
@@ -55,9 +55,9 @@
 <text class="k" x="24" y="54">VERIFIER</text>
 <text class="r" x="316" y="34" text-anchor="end" fill="#238636" style="fill:#238636">ONLINE</text>
 <text class="c" x="24" y="84">✓ scripts/smoke.sh exists on main and is executable</text>
-<text class="c" x="24" y="112">✓ latest smoke.yml run on main succeeded 136.2h ago…</text>
+<text class="c" x="24" y="112">✓ latest smoke.yml run on main succeeded 139.1h ago…</text>
 <text class="m" x="24" y="222">evidence: bfe3b50 2026-10-11T01:39:21Z</text>
-<text class="m" x="24" y="238">checked 2026-10-16T17:53:37Z</text>
+<text class="m" x="24" y="238">checked 2026-10-16T20:44:36Z</text>
 </g>
 <g transform="translate(800,410)">
 <rect width="340" height="250" rx="8" fill="#161b22" stroke="#30363d"/>
@@ -66,9 +66,9 @@
 <text class="k" x="24" y="54">BUILDER</text>
 <text class="r" x="316" y="34" text-anchor="end" fill="#da3633" style="fill:#da3633">OFFLINE</text>
 <text class="c" x="24" y="84">✓ scripts/smoke.sh exists on main and is executable</text>
-<text class="c" x="24" y="112">✗ latest smoke.yml run succeeded but is 908h old (l…</text>
+<text class="c" x="24" y="112">✗ latest smoke.yml run succeeded but is 911h old (l…</text>
 <text class="c" x="24" y="140">✓ latest release v0.1.0 published 2026-10-11T00:19:…</text>
 <text class="m" x="24" y="222">evidence: 7ddca26 2026-09-08T22:04:25Z</text>
-<text class="m" x="24" y="238">checked 2026-10-16T17:53:37Z</text>
+<text class="m" x="24" y="238">checked 2026-10-16T20:44:36Z</text>
 </g>
 </svg>
