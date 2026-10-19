@@ -1,6 +1,6 @@
 {
   "agent": "governor",
-  "checked_at": "2026-10-19T19:13:27Z",
+  "checked_at": "2026-10-19T23:28:54Z",
   "checks": [
     {
       "detail": "scripts/smoke.sh exists on main and is executable",
@@ -15,7 +15,7 @@
       "url": "https://github.com/mrodgersjs-web/doctrine/blob/main/scripts/smoke.sh"
     },
     {
-      "detail": "latest smoke.yml run succeeded but is 981h old (limit 168h)",
+      "detail": "latest smoke.yml run succeeded but is 985h old (limit 168h)",
       "ok": false,
       "params": {
         "workflow": "smoke.yml"
@@ -29,7 +29,7 @@
   "default_branch": "main",
   "evidence_at": "2026-09-08T22:25:49Z",
   "invariant": "scripts/smoke.sh is executable on the default branch and the latest smoke.yml run on it succeeded inside the SLA window",
-  "invariant_result": "ok: scripts/smoke.sh exists on main and is executable; FAIL: latest smoke.yml run succeeded but is 981h old (limit 168h)",
+  "invariant_result": "ok: scripts/smoke.sh exists on main and is executable; FAIL: latest smoke.yml run succeeded but is 985h old (limit 168h)",
   "owner": "mrodgersjs-web",
   "repo": "doctrine",
   "role": "Maintain versioned guardrails, circuit rules, and agent memory files. Every agent loads the latest doctrine before it acts.",
