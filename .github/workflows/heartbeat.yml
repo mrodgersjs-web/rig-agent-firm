@@ -21,6 +21,7 @@ concurrency:
 jobs:
   heartbeat:
     runs-on: ubuntu-latest
+    timeout-minutes: 15
     steps:
       - name: Checkout agent-firm
         uses: actions/checkout@v5

@@ -12,7 +12,7 @@
 <div align="center">
 
 ![heartbeat](https://img.shields.io/endpoint?url=https%3A%2F%2Fraw.githubusercontent.com%2Fmrodgersjs-web%2Frig-agent-firm%2Fheartbeat%2Fbadge.json)
-[![heartbeat](https://img.shields.io/github/actions/workflow/status/mrodgersjs-web/rig-agent-firm/heartbeat.yml?branch=main)](https://github.com/mrodgersjs-web/rig-agent-firm/actions/workflows/heartbeat.yml)
+[![CI](https://img.shields.io/github/actions/workflow/status/mrodgersjs-web/rig-agent-firm/ci.yml?branch=main&label=CI)](https://github.com/mrodgersjs-web/rig-agent-firm/actions/workflows/ci.yml) [![heartbeat](https://img.shields.io/github/actions/workflow/status/mrodgersjs-web/rig-agent-firm/heartbeat.yml?branch=main)](https://github.com/mrodgersjs-web/rig-agent-firm/actions/workflows/heartbeat.yml)
 ![agents](https://img.shields.io/badge/agents-6-C8A96E?style=flat-square&labelColor=0A0806)
 ![license](https://img.shields.io/badge/license-MIT-C8A96E?style=flat-square&labelColor=0A0806)
 
@@ -21,6 +21,18 @@
 <br/>
 
 > Each repository owns one role. This repository owns the heartbeat: an hourly job that checks every agent's invariant through the GitHub API and regenerates a status JSON, badge, and dashboard with evidence.
+
+## Install
+
+This package is **not** published on PyPI; bare `pip install rig-agent-firm` will 404. From a fresh checkout:
+
+```bash
+git clone https://github.com/mrodgersjs-web/rig-agent-firm
+cd rig-agent-firm
+pip install -e '.[dev]'
+```
+
+(`pip install git+https://github.com/mrodgersjs-web/rig-agent-firm` is also supported.)
 
 ## Quick start
 
