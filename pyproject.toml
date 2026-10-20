@@ -4,21 +4,42 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "rig-agent-firm"
-version = "0.1.0"
+version = "0.2.0"
 description = "GitHub-native agent firm: spec validator, heartbeat engine, badge and dashboard"
 readme = "README.md"
 requires-python = ">=3.10"
 license = { text = "MIT" }
+authors = [{ name = "Mike Rodgers" }]
+keywords = ["agents", "heartbeat", "github", "status", "dashboard"]
+classifiers = [
+  "Development Status :: 4 - Beta",
+  "Intended Audience :: Developers",
+  "License :: OSI Approved :: MIT License",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Programming Language :: Python :: 3.13",
+  "Topic :: Software Development :: Quality Assurance",
+]
 dependencies = ["pyyaml>=6"]
 
 [project.optional-dependencies]
-dev = ["pytest>=8", "ruff>=0.5"]
+dev = ["pytest>=8", "pytest-cov>=5", "ruff>=0.5"]
+
+[project.urls]
+Homepage = "https://github.com/mrodgersjs-web/rig-agent-firm"
+Repository = "https://github.com/mrodgersjs-web/rig-agent-firm"
+Issues = "https://github.com/mrodgersjs-web/rig-agent-firm/issues"
 
 [project.scripts]
 agent-firm = "agent_firm.cli:main"
 
 [tool.setuptools]
 packages = ["agent_firm"]
+
+[tool.setuptools.package-data]
+agent_firm = ["py.typed"]
 
 [tool.ruff]
 line-length = 120

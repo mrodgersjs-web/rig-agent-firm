@@ -1,0 +1,5 @@
+blank_issues_enabled: true
+contact_links:
+  - name: Security report
+    url: https://github.com/mrodgersjs-web/rig-agent-firm/security
+    about: Report security issues per SECURITY.md (security@rodgersintelligence.com).

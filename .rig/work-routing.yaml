@@ -28,4 +28,4 @@ enforcement:
   done_claims: tac close-gate (v2) sealed evidence required
   wide_edits: scout-worker-synthesizer required (files > 5)
   fuzzy_fixes: tac stochastic coverage (n >= 2 frames)
-  results_standard: 1000x round via capabilities_round per lane; MCP tools return verified results only
+  results_standard: improvement round via capabilities_round per lane; MCP tools return verified results only
