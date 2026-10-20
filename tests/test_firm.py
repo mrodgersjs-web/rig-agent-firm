@@ -21,18 +21,29 @@ NOW = parse_ts("2026-10-11T00:24:34Z")  # moment the fixtures were recorded
 def specs():
     s, errs = load_specs(ROOT / "agents")
     assert errs == []
-    return {x.dept: x for x in s}
+    return {x.name: x for x in s}
 
 
 def valid_spec():
-    return yaml.safe_load((ROOT / "agents" / "proof-studio.yaml").read_text())
+    return yaml.safe_load((ROOT / "agents" / "verifier.yaml").read_text())
 
 
 # ---------- schema ----------
 
 def test_repo_specs_all_valid(specs):
-    assert set(specs) == {"proof-studio", "jake-studio", "mesh-studio", "rigforge", "fde-portfolio", "doctrine"}
-    assert {s.name for s in specs.values()} == {"verifier", "operator", "fleet", "builder", "strategist", "governor"}
+    assert set(specs) == {"verifier", "operator", "fleet", "builder", "strategist", "governor"}
+    assert {s.dept for s in specs.values()} == {"proof-studio", "jake-studio", "mesh-studio", "rigforge", "fde-portfolio", "doctrine"}
+
+
+def test_spec_file_names_match_agent_names():
+    """Naming law: agents/<name>.yaml holds the agent named <name>."""
+    from agent_firm.schema import load_specs
+
+    specs, errs = load_specs(ROOT / "agents")
+    assert errs == []
+    for s in specs:
+        assert Path(s.path).stem == s.name
+        assert s.slug == s.name
 
 
 def test_validator_rejects_bad_specs():
@@ -62,7 +73,7 @@ def test_validator_rejects_bad_specs():
 
 def test_duplicate_repo_is_rejected(tmp_path):
     for n in ("a.yaml", "b.yaml"):
-        shutil.copy(ROOT / "agents" / "proof-studio.yaml", tmp_path / n)
+        shutil.copy(ROOT / "agents" / "verifier.yaml", tmp_path / n)
     _, errs = load_specs(tmp_path)
     assert any("duplicate agent name" in e for e in errs)
     assert any("one repo, one role" in e for e in errs)
@@ -72,24 +83,24 @@ def test_duplicate_repo_is_rejected(tmp_path):
 
 def test_fixture_run_matches_recorded_reality(specs):
     client = FixtureClient(FIX)
-    v = run_agent(client, specs["proof-studio"], NOW)
+    v = run_agent(client, specs["verifier"], NOW)
     assert v["status"] == "online"
     assert v["run_url"].startswith("https://github.com/mrodgersjs-web/proof-studio/actions/runs/")
     assert len(v["sha"]) == 40 and v["evidence_at"].endswith("Z")
     assert [c["ok"] for c in v["checks"]] == [True, True]
     # stale-but-green runs are reported honestly as offline
-    d = run_agent(client, specs["doctrine"], NOW)
+    d = run_agent(client, specs["governor"], NOW)
     assert d["status"] == "offline"
     assert "old (limit 168h)" in d["invariant_result"]
     # release check
-    j = run_agent(client, specs["jake-studio"], NOW)
+    j = run_agent(client, specs["operator"], NOW)
     assert j["status"] == "online" and j["checks"][2]["type"] == "release_exists" and j["checks"][2]["ok"]
 
 
 def test_freshness_window_flips_with_clock(specs):
     client = FixtureClient(FIX)
     later = parse_ts("2026-10-20T00:24:34Z")  # 9 days on: every run now outside 168h
-    assert run_agent(client, specs["proof-studio"], later)["status"] == "offline"
+    assert run_agent(client, specs["verifier"], later)["status"] == "offline"
 
 
 def test_non_executable_file_fails(tmp_path, specs):
@@ -100,7 +111,7 @@ def test_non_executable_file_fails(tmp_path, specs):
         if e["path"] == "smoke.sh":
             e["mode"] = "100644"
     f.write_text(json.dumps(data))
-    res = run_agent(FixtureClient(tmp_path / "api"), specs["proof-studio"], NOW)
+    res = run_agent(FixtureClient(tmp_path / "api"), specs["verifier"], NOW)
     assert res["status"] == "offline"
     assert "not executable" in res["checks"][0]["detail"]
 
@@ -113,7 +124,7 @@ def test_failed_run_and_missing_release(tmp_path, specs):
     data["workflow_runs"][0]["conclusion"] = "failure"
     runs.write_text(json.dumps(data))
     (tmp_path / "api" / fixture_name("repos/mrodgersjs-web/jake-studio/releases/latest")).unlink()
-    res = run_agent(FixtureClient(tmp_path / "api"), specs["jake-studio"], NOW)
+    res = run_agent(FixtureClient(tmp_path / "api"), specs["operator"], NOW)
     assert res["status"] == "offline"
     assert "concluded failure" in res["checks"][1]["detail"]
     assert res["checks"][2]["detail"] == "no published release"
@@ -123,13 +134,13 @@ def test_api_outage_is_unknown_not_offline(tmp_path, specs):
     shutil.copytree(FIX, tmp_path / "api")
     f = tmp_path / "api" / fixture_name("repos/mrodgersjs-web/mesh-studio/git/trees/main:scripts")
     f.write_text(json.dumps({"__error__": 503}))
-    res = run_agent(FixtureClient(tmp_path / "api"), specs["mesh-studio"], NOW)
+    res = run_agent(FixtureClient(tmp_path / "api"), specs["fleet"], NOW)
     assert res["checks"][0]["ok"] is None
     assert res["status"] == "unknown"
 
 
 def test_unreachable_repo_is_offline(tmp_path, specs):
-    res = run_agent(FixtureClient(tmp_path), specs["doctrine"], NOW)
+    res = run_agent(FixtureClient(tmp_path), specs["governor"], NOW)
     assert res["status"] == "offline" and res["checks"][0]["type"] == "repo_reachable"
 
 
@@ -185,7 +196,7 @@ def test_cli_end_to_end(tmp_path, capsys):
                  "--now", "2026-10-11T00:24:34Z", "--fail-on-offline"]) == 1
     # --only keeps other agents' earlier status files in the rendered outputs
     main(["heartbeat", "--agents", str(ROOT / "agents"), "--fixtures", str(FIX), "--out", str(tmp_path),
-          "--now", "2026-10-11T00:24:34Z", "--only", "proof-studio"])
+          "--now", "2026-10-11T00:24:34Z", "--only", "verifier"])
     assert json.loads((tmp_path / "badge.json").read_text())["message"] == "4/6 online"
 
 

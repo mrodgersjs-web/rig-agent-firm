@@ -1,5 +1,9 @@
 """Schema and validator for ``agents/*.yaml`` specs.
 
+Naming law: an agent is named by its role (``name``). The spec file is
+``agents/<name>.yaml`` and the status file is ``status/<name>.json``. ``dept``
+and ``repo`` name the repository the agent stewards and must agree.
+
 A spec is a YAML mapping. Required fields:
 
 - name, dept, repo ("owner/name"), role, boundary, trigger, sla (prose)
@@ -71,7 +75,8 @@ class AgentSpec:
 
     @property
     def slug(self) -> str:
-        return self.dept
+        """Agent identity: the role name (also the spec file and status file name)."""
+        return self.name
 
 
 def validate_spec(data: Any, source: str = "<spec>") -> list[str]:

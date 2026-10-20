@@ -21,11 +21,11 @@ def _load(agents: str, only: str = ""):
         return None
     if only:
         wanted = {w.strip() for w in only.split(",") if w.strip()}
-        unknown = wanted - {s.dept for s in specs}
+        unknown = wanted - {s.name for s in specs}
         if unknown:
             print(f"error: unknown agents in --only: {', '.join(sorted(unknown))}", file=sys.stderr)
             return None
-        specs = [s for s in specs if s.dept in wanted]
+        specs = [s for s in specs if s.name in wanted]
     return specs
 
 
@@ -34,7 +34,7 @@ def cmd_validate(args) -> int:
     if specs is None:
         return 2
     for s in specs:
-        print(f"ok  {s.dept:<14} {s.name:<10} {len(s.checks)} checks")
+        print(f"ok  {s.name:<10} {s.repo:<28} {len(s.checks)} checks")
     print(f"{len(specs)} agent specs valid")
     return 0
 

@@ -24,21 +24,21 @@ governed.
 
 ## Agent spec format
 
-Every agent is declared in `agents/<dept>.yaml` and checked by `agent-firm validate`. Fields:
+Every agent is declared in `agents/<name>.yaml` (the file is named for the agent's role) and checked by `agent-firm validate`. Fields:
 
-- `name` — short agent name
-- `dept` — repository the agent owns
-- `repo` — full GitHub repository slug
-- `role` — what the agent is responsible for
-- `boundary` — what it must not do
-- `trigger` — when it wakes
-- `implementation` — how it does its job
-- `sla` — expected behavior under normal operation
-- `heartbeat_cron` — when the firm checks this agent
-- `sla_hours` — freshness window in hours (integer)
-- `invariant` — one-line description of what "alive" means
-- `checks` — list of machine checks (`file_exists`, `workflow_success`, `release_exists`, `commit_within`) the engine runs
-- `claim` — the public claim the invariant defends
+- `name`: short agent name
+- `dept`: repository the agent owns
+- `repo`: full GitHub repository slug
+- `role`: what the agent is responsible for
+- `boundary`: what it must not do
+- `trigger`: when it wakes
+- `implementation`: how it does its job
+- `sla`: expected behavior under normal operation
+- `heartbeat_cron`: when the firm checks this agent
+- `sla_hours`: freshness window in hours (integer)
+- `invariant`: one-line description of what "alive" means
+- `checks`: list of machine checks (`file_exists`, `workflow_success`, `release_exists`, `commit_within`) the engine runs
+- `claim`: the public claim the invariant defends
 - `owner`, `status_branch`, `queue_depth_metric`, `last_action_metric`
 
 ## Heartbeat

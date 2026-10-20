@@ -193,13 +193,13 @@ def firm_status(statuses: list[dict[str, Any]]) -> dict[str, Any]:
 
 
 def run_heartbeat(client: Client, specs: list[AgentSpec], out_dir: str | Path, now: datetime | None = None) -> list[dict[str, Any]]:
-    """Check every agent and write ``<out_dir>/status/<dept>.json``. Returns the status docs."""
+    """Check every agent and write ``<out_dir>/status/<name>.json``. Returns the status docs."""
     now = now or datetime.now(timezone.utc)
     status_dir = Path(out_dir) / "status"
     status_dir.mkdir(parents=True, exist_ok=True)
     docs = []
     for spec in specs:
         doc = run_agent(client, spec, now)
-        (status_dir / f"{spec.dept}.json").write_text(json.dumps(doc, indent=2, sort_keys=True) + "\n")
+        (status_dir / f"{spec.name}.json").write_text(json.dumps(doc, indent=2, sort_keys=True) + "\n")
         docs.append(doc)
     return docs
