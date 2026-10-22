@@ -1,6 +1,6 @@
 {
   "agent": "strategist",
-  "checked_at": "2026-10-22T09:54:49Z",
+  "checked_at": "2026-10-22T14:58:05Z",
   "checks": [
     {
       "detail": "scripts/smoke.sh exists on main and is executable",
@@ -15,26 +15,26 @@
       "url": "https://github.com/mrodgersjs-web/fde-portfolio/blob/main/scripts/smoke.sh"
     },
     {
-      "detail": "latest smoke.yml run on main succeeded 49.8h ago (limit 168h)",
-      "ok": true,
+      "detail": "no completed run of smoke.yml on main",
+      "ok": false,
       "params": {
         "workflow": "smoke.yml"
       },
-      "sha": "2a1a50d6e41bd11f2a4bab6a054d34fc5d28e53d",
-      "timestamp": "2026-10-20T08:05:49Z",
+      "sha": "",
+      "timestamp": "",
       "type": "workflow_success",
-      "url": "https://github.com/mrodgersjs-web/fde-portfolio/actions/runs/39390925901"
+      "url": ""
     }
   ],
   "default_branch": "main",
-  "evidence_at": "2026-10-20T08:05:49Z",
+  "evidence_at": "",
   "invariant": "scripts/smoke.sh is executable on the default branch and the latest smoke.yml run on it succeeded inside the SLA window",
-  "invariant_result": "ok: scripts/smoke.sh exists on main and is executable; ok: latest smoke.yml run on main succeeded 49.8h ago (limit 168h)",
+  "invariant_result": "ok: scripts/smoke.sh exists on main and is executable; FAIL: no completed run of smoke.yml on main",
   "owner": "mrodgersjs-web",
   "repo": "fde-portfolio",
   "role": "Turn ambiguous FDE engagements into structured briefs. Discovery, ROI audit, evaluation scorecard, and a sealed handoff to the builder.",
-  "run_url": "https://github.com/mrodgersjs-web/fde-portfolio/actions/runs/39390925901",
+  "run_url": "https://github.com/mrodgersjs-web/fde-portfolio/blob/main/scripts/smoke.sh",
   "schema_version": 2,
-  "sha": "2a1a50d6e41bd11f2a4bab6a054d34fc5d28e53d",
-  "status": "online"
+  "sha": "f07cb8ab5f79dc6a1303555b3cc5585a2e267b95",
+  "status": "offline"
 }
