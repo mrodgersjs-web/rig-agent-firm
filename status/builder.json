@@ -1,6 +1,6 @@
 {
   "agent": "builder",
-  "checked_at": "2026-10-30T12:27:48Z",
+  "checked_at": "2026-10-30T18:28:34Z",
   "checks": [
     {
       "detail": "scripts/smoke.sh exists on main and is executable",
@@ -15,7 +15,7 @@
       "url": "https://github.com/mrodgersjs-web/rigforge/blob/main/scripts/smoke.sh"
     },
     {
-      "detail": "latest smoke.yml run on main succeeded 12.2h ago (limit 168h)",
+      "detail": "latest smoke.yml run on main succeeded 18.2h ago (limit 168h)",
       "ok": true,
       "params": {
         "workflow": "smoke.yml"
@@ -38,7 +38,7 @@
   "default_branch": "main",
   "evidence_at": "2026-10-30T00:13:43Z",
   "invariant": "scripts/smoke.sh is executable on the default branch and the latest smoke.yml run on it succeeded inside the SLA window; a release is published",
-  "invariant_result": "ok: scripts/smoke.sh exists on main and is executable; ok: latest smoke.yml run on main succeeded 12.2h ago (limit 168h); ok: latest release v1.1.0 published 2026-10-20T08:02:36Z",
+  "invariant_result": "ok: scripts/smoke.sh exists on main and is executable; ok: latest smoke.yml run on main succeeded 18.2h ago (limit 168h); ok: latest release v1.1.0 published 2026-10-20T08:02:36Z",
   "owner": "mrodgersjs-web",
   "repo": "rigforge",
   "role": "Provide the build and proof scaffolding every studio uses. Package-first, deterministic, and reproducible across Python 3.11+ environments.",
