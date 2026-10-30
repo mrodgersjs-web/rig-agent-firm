@@ -1,6 +1,6 @@
 {
   "agent": "strategist",
-  "checked_at": "2026-10-30T18:28:34Z",
+  "checked_at": "2026-10-30T22:51:40Z",
   "checks": [
     {
       "detail": "scripts/smoke.sh exists on main and is executable",
@@ -15,7 +15,7 @@
       "url": "https://github.com/mrodgersjs-web/fde-portfolio/blob/main/scripts/smoke.sh"
     },
     {
-      "detail": "latest smoke.yml run on main succeeded 7.4h ago (limit 168h)",
+      "detail": "latest smoke.yml run on main succeeded 11.8h ago (limit 168h)",
       "ok": true,
       "params": {
         "workflow": "smoke.yml"
@@ -29,7 +29,7 @@
   "default_branch": "main",
   "evidence_at": "2026-10-30T11:06:38Z",
   "invariant": "scripts/smoke.sh is executable on the default branch and the latest smoke.yml run on it succeeded inside the SLA window",
-  "invariant_result": "ok: scripts/smoke.sh exists on main and is executable; ok: latest smoke.yml run on main succeeded 7.4h ago (limit 168h)",
+  "invariant_result": "ok: scripts/smoke.sh exists on main and is executable; ok: latest smoke.yml run on main succeeded 11.8h ago (limit 168h)",
   "owner": "mrodgersjs-web",
   "repo": "fde-portfolio",
   "role": "Turn ambiguous FDE engagements into structured briefs. Discovery, ROI audit, evaluation scorecard, and a sealed handoff to the builder.",
