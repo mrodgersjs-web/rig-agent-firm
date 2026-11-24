@@ -1,6 +1,6 @@
 {
   "agent": "strategist",
-  "checked_at": "2026-11-24T05:46:47Z",
+  "checked_at": "2026-11-24T17:16:15Z",
   "checks": [
     {
       "detail": "scripts/smoke.sh exists on main and is executable",
@@ -15,26 +15,26 @@
       "url": "https://github.com/mrodgersjs-web/fde-portfolio/blob/main/scripts/smoke.sh"
     },
     {
-      "detail": "latest smoke.yml run succeeded but is 595h old (limit 168h)",
-      "ok": false,
+      "detail": "latest smoke.yml run on main succeeded 10.7h ago (limit 168h)",
+      "ok": true,
       "params": {
         "workflow": "smoke.yml"
       },
-      "sha": "15cba0fbc6bf08dfabd060b1ab1e97d0512d22ba",
-      "timestamp": "2026-10-30T11:06:38Z",
+      "sha": "a29323e9a11ee8aff3c1119887616c4c37435e48",
+      "timestamp": "2026-11-24T06:32:03Z",
       "type": "workflow_success",
-      "url": "https://github.com/mrodgersjs-web/fde-portfolio/actions/runs/41045651598"
+      "url": "https://github.com/mrodgersjs-web/fde-portfolio/actions/runs/45341131124"
     }
   ],
   "default_branch": "main",
-  "evidence_at": "2026-10-30T11:06:38Z",
+  "evidence_at": "2026-11-24T06:32:03Z",
   "invariant": "scripts/smoke.sh is executable on the default branch and the latest smoke.yml run on it succeeded inside the SLA window",
-  "invariant_result": "ok: scripts/smoke.sh exists on main and is executable; FAIL: latest smoke.yml run succeeded but is 595h old (limit 168h)",
+  "invariant_result": "ok: scripts/smoke.sh exists on main and is executable; ok: latest smoke.yml run on main succeeded 10.7h ago (limit 168h)",
   "owner": "mrodgersjs-web",
   "repo": "fde-portfolio",
   "role": "Turn ambiguous FDE engagements into structured briefs. Discovery, ROI audit, evaluation scorecard, and a sealed handoff to the builder.",
-  "run_url": "https://github.com/mrodgersjs-web/fde-portfolio/actions/runs/41045651598",
+  "run_url": "https://github.com/mrodgersjs-web/fde-portfolio/actions/runs/45341131124",
   "schema_version": 2,
-  "sha": "15cba0fbc6bf08dfabd060b1ab1e97d0512d22ba",
-  "status": "offline"
+  "sha": "a29323e9a11ee8aff3c1119887616c4c37435e48",
+  "status": "online"
 }
