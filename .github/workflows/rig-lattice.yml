@@ -3,19 +3,71 @@ on:
   push:
     branches: ["**"]
   pull_request:
+  workflow_dispatch:
 
 permissions:
   contents: read
 
 jobs:
+  mcp2-only:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+      - name: Enforce strict MCP 2 (2026-07-28) protocol only
+        run: |
+          python3 - <<'PY'
+          import json, pathlib, re, subprocess, sys
+
+          root = pathlib.Path(".")
+          v1_re = re.compile(
+              r'(?:mcp\[cli\]\s*<\s*2|\bmcp\s*(?:>=?[^,\s"\']+\s*,\s*)?<\s*2\b|@modelcontextprotocol/sdk["\']?\s*[:@]\s*["\']?[\^~]?1\.)',
+              re.IGNORECASE,
+          )
+          bad_pins = []
+          for p in sorted(root.rglob("*")):
+              if not p.is_file():
+                  continue
+              if any(part in {".git", "blueprints", "node_modules", ".venv", "__pycache__"} for part in p.relative_to(root).parts):
+                  continue
+              if p.suffix not in {".py", ".md", ".toml", ".json", ".yml", ".yaml", ".txt"}:
+                  continue
+              if p.as_posix() == ".github/workflows/rig-lattice.yml":
+                  continue
+              txt = p.read_text("utf-8", "ignore")
+              if v1_re.search(txt):
+                  bad_pins.append(p.as_posix())
+          if bad_pins:
+              print("FAIL: legacy MCP v1 pins found:", bad_pins)
+              sys.exit(1)
+
+          for candidate in ("mcp/server.py", "steward/catalog_mcp.py"):
+              fp = root / candidate
+              if not fp.is_file():
+                  continue
+              proc = subprocess.Popen(
+                  [sys.executable, str(fp)],
+                  stdin=subprocess.PIPE, stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True,
+              )
+              reqs = [
+                  {"jsonrpc": "2.0", "id": 1, "method": "server/discover", "params": {"_meta": {"io.modelcontextprotocol/protocolVersion": "2026-07-28"}}},
+                  {"jsonrpc": "2.0", "id": 2, "method": "tools/list", "params": {"_meta": {"io.modelcontextprotocol/protocolVersion": "2026-07-28"}}},
+                  {"jsonrpc": "2.0", "id": 3, "method": "initialize", "params": {"protocolVersion": "2025-11-25"}},
+              ]
+              out, err = proc.communicate("\n".join(json.dumps(r) for r in reqs) + "\n", timeout=15)
+              lines = [json.loads(x) for x in out.splitlines() if x.strip()]
+              assert len(lines) == 3, f"{candidate}: expected 3 responses, got {lines} stderr={err}"
+              assert lines[0]["result"]["supportedVersions"] == ["2026-07-28"], lines[0]
+              assert lines[1]["result"]["resultType"] == "complete", lines[1]
+              assert lines[2]["error"]["code"] == -32022, lines[2]
+              print(f"PASS strict MCP 2 (2026-07-28): {candidate}")
+          PY
+
   lattice:
-    # The rig-lattice scorer is not on PyPI yet (pip install returns 404), so this
-    # job failed on every push since 2026-09-12. It now skips instead of failing.
-    # To turn it back on once the scorer is installable, set the repository
-    # variable RIG_LATTICE_ENABLED to true (Settings > Secrets and variables > Actions).
     if: ${{ vars.RIG_LATTICE_ENABLED == 'true' }}
     runs-on: ubuntu-latest
-    timeout-minutes: 15
     steps:
       - uses: actions/checkout@v5
         with:

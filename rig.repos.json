@@ -20,6 +20,8 @@
   "results_mcp": {
     "entry": "mcp/server.py",
     "transport": "stdio",
-    "name": "rig-results"
+    "name": "rig-results",
+    "protocol_version": "2026-07-28",
+    "strict_mcp2": true
   }
 }
